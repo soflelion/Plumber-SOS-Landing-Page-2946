@@ -196,14 +196,14 @@ export const Testimonial = ({ name, location, quote }) => {
           ))}
         </div>
       </div>
-      <p className="text-gray-700 italic mb-4 text-lg">{quote}</p>
+      <div className="text-gray-700 italic mb-4 text-lg">{quote}</div>
       <div className="flex items-center">
         <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center text-white font-bold mr-3">
           {name.charAt(0)}
         </div>
         <div>
-          <p className="font-bold text-gray-800">{name}</p>
-          <p className="text-sm text-primary">{location}</p>
+          <div className="font-bold text-gray-800">{name}</div>
+          <div className="text-sm text-primary">{location}</div>
         </div>
       </div>
     </motion.div>
