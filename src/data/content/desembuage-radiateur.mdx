@@ -1,84 +1,258 @@
+import { HeroAnimation, ResponseTimeIndicator, ServiceCard, EmergencyCallToAction, Guarantees, Testimonial } from '../../components/WaterLeakComponents';
+import { FaThermometerHalf, FaTools, FaTachometerAlt, FaShieldAlt, FaLeaf, FaEuroSign, FaWrench } from 'react-icons/fa';
+
 export const props = ['ville', 'response_time', 'service'];
 
-# {props.service} à {props.ville}
+<HeroAnimation />
 
-Radiateurs froids ou chauffage inefficace à {props.ville} ? Nos techniciens interviennent sous {props.response_time} pour un désembuage professionnel de vos radiateurs.
+<div className="mb-12 mt-8">
+  <h1 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">Désembuage de radiateur à {props.ville}</h1>
 
-## Notre service désembuage
+  <div className="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-8">
+    Radiateurs froids ou chauffage inefficace à {props.ville} ? Nos techniciens interviennent sous {props.response_time} pour un désembuage professionnel de vos radiateurs.
+  </div>
 
-- Diagnostic thermique complet
-- Désembuage haute pression
-- Traitement anticorrosion
-- Optimisation du chauffage
+  <ResponseTimeIndicator time={props.response_time} />
+</div>
 
-{props.ville === 'Lyon' && (
-  <>
-    ## Désembuage radiateur Lyon
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-16">
+  <ServiceCard 
+    icon={FaThermometerHalf} 
+    title="Diagnostic thermique complet" 
+    description="Analyse précise de votre installation pour identifier les problèmes"
+  />
+  <ServiceCard 
+    icon={FaTools} 
+    title="Désembuage haute pression" 
+    description="Élimination efficace des boues et dépôts dans vos radiateurs"
+  />
+  <ServiceCard 
+    icon={FaTachometerAlt} 
+    title="Traitement anticorrosion" 
+    description="Protection durable contre la formation de nouvelles boues"
+  />
+  <ServiceCard 
+    icon={FaShieldAlt} 
+    title="Optimisation du chauffage" 
+    description="Réglages pour maximiser l'efficacité de votre système"
+  />
+</div>
 
-    Notre expertise lyonnaise :
-    - Intervention tous arrondissements
-    - Spécialistes chauffage central
-    - Solutions adaptées immeubles anciens
-    - Équipement professionnel
-  </>
-)}
+<div className="bg-blue-50 rounded-xl p-8 my-16 shadow-md">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-blue-600">Signes que vos radiateurs ont besoin d'un désembuage</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-blue-600 mb-3">Radiateurs froids en partie</h3>
+      <div className="text-gray-700">Le haut du radiateur est chaud mais le bas reste froid, signe d'accumulation de boues</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-blue-600 mb-3">Bruits dans les tuyaux</h3>
+      <div className="text-gray-700">Claquements, sifflements ou gargouillements dans votre installation de chauffage</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-blue-600 mb-3">Chauffage lent</h3>
+      <div className="text-gray-700">Temps de chauffe anormalement long pour atteindre la température souhaitée</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-blue-600 mb-3">Factures d'énergie élevées</h3>
+      <div className="text-gray-700">Augmentation inexpliquée de votre consommation d'énergie malgré une utilisation normale</div>
+    </div>
+  </div>
+</div>
 
-{props.ville === 'Villeurbanne' && (
-  <>
-    ## Service désembuage Villeurbanne
+<EmergencyCallToAction />
 
-    Notre service local :
-    - Intervention rapide tous quartiers
-    - Expertise habitat collectif
-    - Techniciens spécialisés
-    - Matériel dernière génération
-  </>
-)}
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Notre procédé de désembuage</h2>
+  
+  <div className="relative">
+    <div className="absolute left-1/2 -ml-0.5 w-0.5 h-full bg-gradient-to-b from-primary to-secondary"></div>
+    
+    <div className="grid grid-cols-1 gap-8 mb-12 relative">
+      <div className="bg-white rounded-lg shadow-md p-6 ml-0 md:ml-8 relative">
+        <div className="absolute top-6 -left-4 md:-left-12 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">1</div>
+        <h3 className="text-xl font-bold mb-3">Diagnostic</h3>
+        <div className="text-gray-700">
+          Analyse complète de votre système de chauffage pour identifier les zones problématiques, mesure des températures et vérification du fonctionnement des circulateurs.
+        </div>
+      </div>
+      
+      <div className="bg-white rounded-lg shadow-md p-6 ml-0 md:ml-8 relative">
+        <div className="absolute top-6 -left-4 md:-left-12 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">2</div>
+        <h3 className="text-xl font-bold mb-3">Désembuage</h3>
+        <div className="text-gray-700">
+          Nettoyage haute pression de l'ensemble du circuit avec des produits spécifiques pour dissoudre les boues et dépôts accumulés dans les radiateurs et tuyauteries.
+        </div>
+      </div>
+      
+      <div className="bg-white rounded-lg shadow-md p-6 ml-0 md:ml-8 relative">
+        <div className="absolute top-6 -left-4 md:-left-12 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">3</div>
+        <h3 className="text-xl font-bold mb-3">Rinçage</h3>
+        <div className="text-gray-700">
+          Élimination complète des résidus et des boues dissoutes par un rinçage intensif du circuit, assurant une circulation optimale de l'eau.
+        </div>
+      </div>
+      
+      <div className="bg-white rounded-lg shadow-md p-6 ml-0 md:ml-8 relative">
+        <div className="absolute top-6 -left-4 md:-left-12 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">4</div>
+        <h3 className="text-xl font-bold mb-3">Protection</h3>
+        <div className="text-gray-700">
+          Application d'un traitement anticorrosion pour protéger durablement votre installation et prévenir la formation de nouvelles boues.
+        </div>
+      </div>
+      
+      <div className="bg-white rounded-lg shadow-md p-6 ml-0 md:ml-8 relative">
+        <div className="absolute top-6 -left-4 md:-left-12 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">5</div>
+        <h3 className="text-xl font-bold mb-3">Contrôle</h3>
+        <div className="text-gray-700">
+          Vérification finale des performances de votre système, mesure des températures et ajustements pour garantir un fonctionnement optimal.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
-  <>
-    ## Désembuage radiateurs à {props.ville}
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Avantages du désembuage</h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
+        <FaLeaf className="text-white text-5xl" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-3">Économies d'énergie</h3>
+        <div className="text-gray-700">
+          Réduction de votre consommation énergétique jusqu'à 40% grâce à un système de chauffage plus efficace et performant.
+        </div>
+      </div>
+    </div>
+    
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="h-48 bg-gradient-to-r from-blue-600 to-blue-700 flex items-center justify-center">
+        <FaEuroSign className="text-white text-5xl" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-3">Confort thermique</h3>
+        <div className="text-gray-700">
+          Chaleur homogène dans toutes les pièces, répartition optimale de la température et temps de chauffe réduit.
+        </div>
+      </div>
+    </div>
+    
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="h-48 bg-gradient-to-r from-blue-700 to-blue-800 flex items-center justify-center">
+        <FaWrench className="text-white text-5xl" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-3">Durabilité</h3>
+        <div className="text-gray-700">
+          Prolongation de la durée de vie de votre installation, réduction des pannes et des interventions d'urgence.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    Notre engagement :
-    - Intervention sous {props.response_time}
-    - Techniciens qualifiés
-    - Solutions personnalisées
-    - Résultats garantis
-  </>
-)}
+<div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-8 my-16 shadow-md">
+  <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">Types d'installations traitées</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Radiateurs en fonte</h3>
+      <div className="text-gray-700">Traitement adapté aux radiateurs anciens en fonte, particulièrement sensibles à l'embouage.</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Radiateurs en acier</h3>
+      <div className="text-gray-700">Nettoyage spécifique pour les radiateurs modernes en acier ou en aluminium.</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Plancher chauffant</h3>
+      <div className="text-gray-700">Désembuage délicat des circuits de plancher chauffant pour restaurer leur efficacité.</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Chauffage collectif</h3>
+      <div className="text-gray-700">Solutions adaptées aux immeubles et copropriétés avec chauffage central collectif.</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Installation individuelle</h3>
+      <div className="text-gray-700">Traitement complet des systèmes de chauffage pour maisons et appartements.</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Circuits industriels</h3>
+      <div className="text-gray-700">Désembuage professionnel pour les installations industrielles de grande capacité.</div>
+    </div>
+  </div>
+</div>
 
-## Avantages du désembuage
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Nos garanties</h2>
+  <Guarantees />
+</div>
 
-- Meilleur rendement chauffage
-- Économies d'énergie
-- Confort thermique optimal
-- Durée de vie prolongée
-- Réduction des pannes
-- Silence de fonctionnement
-- Protection installation
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Témoignages clients</h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <Testimonial 
+      name="Philippe R." 
+      location={`${props.ville}`} 
+      quote="Après le désembuage, mes radiateurs chauffent de façon homogène et ma facture de chauffage a baissé de 30%. L'équipe a été professionnelle et efficace. Je recommande vivement ce service !"
+    />
+    <Testimonial 
+      name="Sophie M." 
+      location={`${props.ville}`} 
+      quote="Intervention rapide et soignée. Mes radiateurs faisaient un bruit terrible et chauffaient mal. Depuis le désembuage, c'est silencieux et la chaleur est parfaitement répartie. Merci !"
+    />
+  </div>
+</div>
 
-## Notre procédé
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Pourquoi nous choisir ?</h2>
 
-1. **Diagnostic** : Analyse complète du système
-2. **Désembuage** : Nettoyage haute pression
-3. **Rinçage** : Élimination des boues
-4. **Protection** : Traitement anticorrosion
-5. **Contrôle** : Vérification des performances
-
-## Types d'installations traitées
-
-- Radiateurs fonte
-- Radiateurs acier
-- Plancher chauffant
-- Chauffage collectif
-- Installation individuelle
-- Circuits industriels
-- Réseaux tertiaires
-
-## Pourquoi nous choisir ?
-
-1. **Expertise** : Techniciens spécialisés
-2. **Rapidité** : Intervention sous {props.response_time}
-3. **Équipement** : Matériel professionnel
-4. **Garantie** : Résultats mesurables
-5. **Économies** : Jusqu'à 40% sur votre chauffage
+  <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-8 shadow-md">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">1</span>
+          <h3 className="font-semibold">Expertise</h3>
+        </div>
+        <div className="text-sm text-gray-600">Techniciens spécialisés dans le désembuage de tous types d'installations</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">2</span>
+          <h3 className="font-semibold">Rapidité</h3>
+        </div>
+        <div className="text-sm text-gray-600">Intervention sous {props.response_time} garantie</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">3</span>
+          <h3 className="font-semibold">Équipement</h3>
+        </div>
+        <div className="text-sm text-gray-600">Matériel professionnel de dernière génération pour un résultat optimal</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">4</span>
+          <h3 className="font-semibold">Garantie</h3>
+        </div>
+        <div className="text-sm text-gray-600">Résultats mesurables et vérifiables après intervention</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">5</span>
+          <h3 className="font-semibold">Économies</h3>
+        </div>
+        <div className="text-sm text-gray-600">Jusqu'à 40% d'économies sur vos factures de chauffage</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">6</span>
+          <h3 className="font-semibold">Satisfaction</h3>
+        </div>
+        <div className="text-sm text-gray-600">Plus de 95% de clients satisfaits de nos prestations</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,92 +1,101 @@
+import { HeroAnimation, ResponseTimeIndicator, ServiceCard, EmergencyCallToAction, Guarantees } from '../../components/WaterLeakComponents';
+import { FaTools, FaWrench, FaCheckCircle, FaClock, FaUserTie, FaMoneyBillWave, FaTint, FaThermometer } from 'react-icons/fa';
+import { GiValve } from 'react-icons/gi';
+import { MdPlumbing } from 'react-icons/md';
+
 export const props = ['ville', 'response_time', 'service'];
 
-# {props.service} à {props.ville}
+<HeroAnimation />
 
-Problème de radiateur ou de robinetterie à {props.ville} ? Nos plombiers chauffagistes interviennent sous {props.response_time} pour un dépannage efficace.
+<div className="mb-12 mt-8">
+  <h1 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
+    Dépannage radiateur et robinetterie
+  </h1>
 
-## Nos services de dépannage
+  <div className="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-8">
+    Intervention sous {props.response_time}
+  </div>
 
-- Diagnostic précis et rapide
-- Réparation immédiate
-- Remplacement si nécessaire
-- Installation aux normes
+  <ResponseTimeIndicator time={props.response_time} />
+</div>
 
-{props.ville === 'Lyon' && (
-  <>
-    ## Dépannage radiateur et robinetterie Lyon
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 my-12">
+  <ServiceCard icon={FaTools} title="Diagnostic" description="Analyse précise" />
+  <ServiceCard icon={FaWrench} title="Réparation" description="Intervention rapide" />
+  <ServiceCard icon={MdPlumbing} title="Installation" description="Équipements neufs" />
+  <ServiceCard icon={GiValve} title="Maintenance" description="Entretien régulier" />
+</div>
 
-    Notre expertise lyonnaise :
-    - Intervention tous arrondissements
-    - Stock pièces important
-    - Spécialistes chauffage central
-    - Solutions habitat ancien
-  </>
-)}
+<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 my-12">
+  <div className="bg-white rounded-xl p-6 shadow-lg">
+    <div className="flex items-center mb-4">
+      <FaThermometer className="text-primary text-2xl mr-3" />
+      <h3 className="text-xl font-bold">Radiateurs</h3>
+    </div>
+    <div className="space-y-3">
+      <div className="flex items-center p-3 bg-gray-50 rounded-lg">
+        <FaCheckCircle className="text-primary mr-2" />
+        <span>Radiateur fonte</span>
+      </div>
+      <div className="flex items-center p-3 bg-gray-50 rounded-lg">
+        <FaCheckCircle className="text-primary mr-2" />
+        <span>Radiateur acier</span>
+      </div>
+      <div className="flex items-center p-3 bg-gray-50 rounded-lg">
+        <FaCheckCircle className="text-primary mr-2" />
+        <span>Sèche-serviette</span>
+      </div>
+    </div>
+  </div>
 
-{props.ville === 'Villeurbanne' && (
-  <>
-    ## Service plomberie Villeurbanne
+  <div className="bg-white rounded-xl p-6 shadow-lg">
+    <div className="flex items-center mb-4">
+      <FaTint className="text-secondary text-2xl mr-3" />
+      <h3 className="text-xl font-bold">Robinetterie</h3>
+    </div>
+    <div className="space-y-3">
+      <div className="flex items-center p-3 bg-gray-50 rounded-lg">
+        <FaCheckCircle className="text-secondary mr-2" />
+        <span>Mitigeur cuisine</span>
+      </div>
+      <div className="flex items-center p-3 bg-gray-50 rounded-lg">
+        <FaCheckCircle className="text-secondary mr-2" />
+        <span>Robinet salle de bain</span>
+      </div>
+      <div className="flex items-center p-3 bg-gray-50 rounded-lg">
+        <FaCheckCircle className="text-secondary mr-2" />
+        <span>Mitigeur thermostatique</span>
+      </div>
+    </div>
+  </div>
+</div>
 
-    Notre service local :
-    - Intervention rapide tous quartiers
-    - Expertise copropriétés
-    - Techniciens qualifiés
-    - Pièces disponibles
-  </>
-)}
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto px-4 my-12">
+  <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+      <FaClock className="text-primary text-xl" />
+    </div>
+    <h3 className="text-lg font-bold text-gray-800 mb-2">Intervention rapide</h3>
+    <div className="text-gray-600">Disponibles 24/7</div>
+  </div>
 
-{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
-  <>
-    ## Dépannage plomberie à {props.ville}
+  <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+      <FaUserTie className="text-primary text-xl" />
+    </div>
+    <h3 className="text-lg font-bold text-gray-800 mb-2">Expertise certifiée</h3>
+    <div className="text-gray-600">Techniciens qualifiés</div>
+  </div>
 
-    Notre engagement :
-    - Intervention sous {props.response_time}
-    - Équipe locale qualifiée
-    - Stock permanent
-    - Garantie intervention
-  </>
-)}
+  <div className="bg-white rounded-xl p-6 shadow-lg text-center">
+    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
+      <FaMoneyBillWave className="text-primary text-xl" />
+    </div>
+    <h3 className="text-lg font-bold text-gray-800 mb-2">Prix transparent</h3>
+    <div className="text-gray-600">Devis gratuit</div>
+  </div>
+</div>
 
-## Interventions radiateurs
+<EmergencyCallToAction />
 
-- Purge professionnelle
-- Remplacement robinet
-- Réparation fuite
-- Changement joint
-- Remplacement radiateur
-- Équilibrage installation
-- Désembouage
-
-## Services robinetterie
-
-- Réparation mitigeur
-- Changement cartouche
-- Remplacement joint
-- Installation robinet
-- Réparation fuite
-- Détartrage
-- Maintenance préventive
-
-## Types d'équipements
-
-### Radiateurs
-- Radiateur fonte
-- Radiateur acier
-- Radiateur aluminium
-- Sèche-serviette
-- Plancher chauffant
-
-### Robinetterie
-- Mitigeur cuisine
-- Robinet salle de bain
-- Mitigeur thermostatique
-- Robinet extérieur
-- Robinet d'arrêt
-
-## Pourquoi nous choisir ?
-
-1. **Rapidité** : Intervention sous {props.response_time}
-2. **Stock** : Pièces disponibles
-3. **Expertise** : Techniciens qualifiés
-4. **Garantie** : Travaux garantis
-5. **Transparence** : Devis détaillé gratuit
+<Guarantees />

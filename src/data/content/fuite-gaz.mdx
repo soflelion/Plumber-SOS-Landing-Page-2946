@@ -1,82 +1,298 @@
+import { HeroAnimation, ResponseTimeIndicator, ServiceCard, EmergencyCallToAction, Guarantees, Testimonial, CityDistricts } from '../../components/WaterLeakComponents';
+import { FaExclamationTriangle, FaSearch, FaTools, FaShieldAlt } from 'react-icons/fa';
+
 export const props = ['ville', 'response_time', 'service'];
 
-# {props.service} à {props.ville}
+<HeroAnimation />
 
-⚠️ Une fuite de gaz à {props.ville} ? C'est une urgence ! Nos techniciens certifiés interviennent en priorité sous {props.response_time} pour votre sécurité.
+<div className="mb-12 mt-8">
+  <h1 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">Urgence fuite de gaz à {props.ville}</h1>
 
-## Intervention d'urgence gaz
+  <div className="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-8">
+    Une fuite de gaz représente un danger immédiat. Nos techniciens spécialisés interviennent en urgence à {props.ville} pour sécuriser votre installation.
+  </div>
 
-- Mise en sécurité immédiate
-- Détection professionnelle des fuites
-- Réparation conforme aux normes
-- Certification de conformité
+  <ResponseTimeIndicator time={props.response_time} />
+</div>
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-12">
+  <ServiceCard 
+    icon={FaExclamationTriangle}
+    title="Mise en sécurité immédiate" 
+    description="Intervention prioritaire pour sécuriser votre installation"
+  />
+  <ServiceCard 
+    icon={FaSearch}
+    title="Détection professionnelle" 
+    description="Localisation précise des fuites avec matériel spécialisé"
+  />
+  <ServiceCard 
+    icon={FaTools}
+    title="Réparation aux normes" 
+    description="Intervention conforme à la réglementation gaz"
+  />
+  <ServiceCard 
+    icon={FaShieldAlt}
+    title="Certification" 
+    description="Délivrance d'un certificat de conformité après intervention"
+  />
+</div>
+
+<div className="bg-red-50 rounded-xl p-8 my-16 shadow-md">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-red-600">Mesures de sécurité immédiates</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-red-600 mb-3">1. Ouvrez les fenêtres</h3>
+      <div className="text-gray-700">Aérez immédiatement tous les espaces pour disperser le gaz</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-red-600 mb-3">2. Coupez le gaz</h3>
+      <div className="text-gray-700">Fermez le robinet général d'arrivée de gaz</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-red-600 mb-3">3. Évitez les étincelles</h3>
+      <div className="text-gray-700">Ne touchez à aucun interrupteur électrique</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-red-600 mb-3">4. Évacuez</h3>
+      <div className="text-gray-700">Sortez du bâtiment et appelez les secours</div>
+    </div>
+  </div>
+</div>
+
+<EmergencyCallToAction />
+
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Nos garanties</h2>
+  <Guarantees />
+</div>
 
 {props.ville === 'Lyon' && (
   <>
-    ## Service fuite de gaz Lyon
-
-    Notre expertise sur Lyon :
-    - Intervention prioritaire tous arrondissements
-    - Équipe certifiée gaz
-    - Partenaire des principaux fournisseurs
-    - Connaissance du réseau lyonnais
+    <div className="my-16">
+      <CityDistricts 
+        city="Lyon"
+        districts={[
+          { name: "Centre historique", info: "Expertise particulière pour les installations anciennes du Vieux Lyon, avec une connaissance approfondie des réseaux historiques." },
+          { name: "Immeubles haussmanniens", info: "Spécialistes des installations gaz dans les immeubles de la Presqu'île et des Brotteaux, conformité aux normes patrimoniales." },
+          { name: "Quartiers modernes", info: "Intervention sur les installations récentes de la Part-Dieu et Confluence, avec les dernières technologies de détection." },
+          { name: "Partenariats", info: "Collaboration étroite avec les principaux fournisseurs de gaz et les services de sécurité de Lyon." }
+        ]}
+      />
+    </div>
+    
+    <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-8 my-16 shadow-md">
+      <h3 className="text-2xl font-bold mb-6 text-gray-800 text-center">Notre expertise à Lyon</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-white rounded-lg p-4 shadow-sm">
+          <h4 className="font-bold text-primary mb-3">Centre historique</h4>
+          <div className="text-gray-700">
+            Expertise particulière pour les installations anciennes du Vieux Lyon, avec une connaissance approfondie des réseaux historiques.
+          </div>
+        </div>
+        <div className="bg-white rounded-lg p-4 shadow-sm">
+          <h4 className="font-bold text-primary mb-3">Immeubles haussmanniens</h4>
+          <div className="text-gray-700">
+            Spécialistes des installations gaz dans les immeubles de la Presqu'île et des Brotteaux, conformité aux normes patrimoniales.
+          </div>
+        </div>
+        <div className="bg-white rounded-lg p-4 shadow-sm">
+          <h4 className="font-bold text-primary mb-3">Quartiers modernes</h4>
+          <div className="text-gray-700">
+            Intervention sur les installations récentes de la Part-Dieu et Confluence, avec les dernières technologies de détection.
+          </div>
+        </div>
+        <div className="bg-white rounded-lg p-4 shadow-sm">
+          <h4 className="font-bold text-primary mb-3">Partenariats</h4>
+          <div className="text-gray-700">
+            Collaboration étroite avec les principaux fournisseurs de gaz et les services de sécurité de Lyon.
+          </div>
+        </div>
+      </div>
+    </div>
   </>
 )}
 
 {props.ville === 'Villeurbanne' && (
-  <>
-    ## Urgence gaz Villeurbanne
-
-    Notre service local :
-    - Intervention express tous quartiers
-    - Techniciens habilités gaz
-    - Expertise installations collectives
-    - Disponibilité 24h/24
-  </>
+  <div className="bg-blue-50 rounded-xl p-8 my-16 shadow-md">
+    <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Service fuite de gaz à Villeurbanne</h2>
+    <div className="mb-6 text-center text-gray-700">Notre équipe certifiée intervient rapidement dans tous les quartiers de Villeurbanne.</div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <h3 className="font-semibold mb-3">Gratte-Ciel / Charpennes</h3>
+        <div className="text-sm text-gray-600">Intervention express en moins de {props.response_time}</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <h3 className="font-semibold mb-3">Tonkin / Croix-Luizet</h3>
+        <div className="text-sm text-gray-600">Équipe dédiée 24h/24</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <h3 className="font-semibold mb-3">Cusset / Bonnevay</h3>
+        <div className="text-sm text-gray-600">Techniciens certifiés disponibles</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <h3 className="font-semibold mb-3">Flachet / Buers</h3>
+        <div className="text-sm text-gray-600">Service d'urgence permanent</div>
+      </div>
+    </div>
+  </div>
 )}
 
 {props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
-  <>
-    ## Service fuite gaz à {props.ville}
-
-    Notre engagement :
-    - Intervention sous {props.response_time}
-    - Équipe certifiée locale
-    - Matériel de détection professionnel
-    - Disponibilité permanente
-  </>
+  <div className="bg-blue-50 rounded-xl p-8 my-16 shadow-md">
+    <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Notre service local à {props.ville}</h2>
+    <div className="mb-6 text-center text-gray-700">Nos engagements pour {props.ville} :</div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="bg-white rounded-lg p-4 shadow-sm flex items-start">
+        <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 mt-1">1</span>
+        <div>
+          <h3 className="font-semibold mb-2">Intervention rapide</h3>
+          <div className="text-sm text-gray-600">Sous {props.response_time} garantie</div>
+        </div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm flex items-start">
+        <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 mt-1">2</span>
+        <div>
+          <h3 className="font-semibold mb-2">Techniciens certifiés</h3>
+          <div className="text-sm text-gray-600">Experts en intervention gaz</div>
+        </div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm flex items-start">
+        <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 mt-1">3</span>
+        <div>
+          <h3 className="font-semibold mb-2">Service d'urgence</h3>
+          <div className="text-sm text-gray-600">Disponible 24h/24</div>
+        </div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm flex items-start">
+        <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 mt-1">4</span>
+        <div>
+          <h3 className="font-semibold mb-2">Certification</h3>
+          <div className="text-sm text-gray-600">Interventions aux normes</div>
+        </div>
+      </div>
+    </div>
+  </div>
 )}
 
-## Mesures de sécurité immédiates
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Notre processus d'intervention</h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="h-48 bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center">
+        <FaSearch className="text-white text-5xl" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-3">Détection précise</h3>
+        <div className="text-gray-700">
+          Utilisation d'équipements de détection de gaz de dernière génération pour localiser précisément la fuite.
+        </div>
+      </div>
+    </div>
+    
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="h-48 bg-gradient-to-r from-red-600 to-red-700 flex items-center justify-center">
+        <FaTools className="text-white text-5xl" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-3">Réparation sécurisée</h3>
+        <div className="text-gray-700">
+          Intervention conforme aux normes de sécurité avec des pièces certifiées et des techniques approuvées.
+        </div>
+      </div>
+    </div>
+    
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="h-48 bg-gradient-to-r from-red-700 to-red-800 flex items-center justify-center">
+        <FaShieldAlt className="text-white text-5xl" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-3">Contrôle final</h3>
+        <div className="text-gray-700">
+          Tests approfondis et vérification complète de l'installation avant remise en service.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-1. Ouvrez les fenêtres
-2. Ne touchez à aucun interrupteur
-3. Fermez le robinet de gaz
-4. Évacuez les lieux
-5. Appelez-nous immédiatement
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Témoignages clients</h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <Testimonial 
+      name="Pierre M." 
+      location={`${props.ville}`} 
+      quote="Intervention ultra rapide suite à une odeur de gaz. L'équipe a été très professionnelle et rassurante. Problème résolu en moins d'une heure."
+    />
+    <Testimonial 
+      name="Sarah L." 
+      location={`${props.ville}`} 
+      quote="Service impeccable. Les techniciens sont arrivés en 15 minutes et ont géré la situation avec beaucoup de professionnalisme. Je recommande vivement."
+    />
+  </div>
+</div>
 
-## Nos prestations gaz
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Pourquoi nous choisir ?</h2>
 
-- Détection de fuite
-- Réparation d'urgence
-- Mise en conformité
-- Remplacement de flexible
-- Vérification installation
-- Test d'étanchéité
-- Certification installation
-
-## Pourquoi nous choisir ?
-
-1. **Urgence** : Intervention prioritaire sous {props.response_time}
-2. **Certification** : Techniciens agréés gaz
-3. **Sécurité** : Protocoles stricts
-4. **Expertise** : Équipement professionnel
-5. **Conformité** : Respect des normes en vigueur
-
-## Prévention des fuites de gaz
-
-- Vérification régulière des installations
-- Contrôle des raccordements
-- Maintenance préventive
-- Détection précoce
-- Conseils de sécurité
+  <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-8 shadow-md">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">1</span>
+          <h3 className="font-semibold">Rapidité d'intervention</h3>
+        </div>
+        <div className="text-sm text-gray-600">
+          Présence sur site en moins de {props.response_time}
+        </div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">2</span>
+          <h3 className="font-semibold">Certification gaz</h3>
+        </div>
+        <div className="text-sm text-gray-600">
+          Techniciens qualifiés et agréés
+        </div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">3</span>
+          <h3 className="font-semibold">Équipement spécialisé</h3>
+        </div>
+        <div className="text-sm text-gray-600">
+          Matériel de détection professionnel
+        </div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">4</span>
+          <h3 className="font-semibold">Disponibilité</h3>
+        </div>
+        <div className="text-sm text-gray-600">
+          Service d'urgence 24h/24 et 7j/7
+        </div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">5</span>
+          <h3 className="font-semibold">Conformité</h3>
+        </div>
+        <div className="text-sm text-gray-600">
+          Interventions aux normes en vigueur
+        </div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">6</span>
+          <h3 className="font-semibold">Satisfaction client</h3>
+        </div>
+        <div className="text-sm text-gray-600">
+          Plus de 99% de clients satisfaits
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

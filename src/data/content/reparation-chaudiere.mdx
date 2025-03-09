@@ -1,87 +1,269 @@
+import { HeroAnimation, ResponseTimeIndicator, ServiceCard, EmergencyCallToAction, Guarantees } from '../../components/WaterLeakComponents';
+import { FaTools, FaWrench, FaThermometerHalf, FaCheckCircle, FaShieldAlt, FaClock, FaUserTie, FaCalendarCheck, FaMoneyBillWave, FaFire, FaWater } from 'react-icons/fa';
+import { GiWaterDrop, GiHeatHaze } from 'react-icons/gi';
+import { MdEngineering, MdOutlineHomeRepairService, MdWarning } from 'react-icons/md';
+import { BsGearFill, BsThermometerHigh } from 'react-icons/bs';
+
 export const props = ['ville', 'response_time', 'service'];
 
-# {props.service} à {props.ville}
+<HeroAnimation
+  title={`${props.service} à ${props.ville}`}
+  description="Votre chaudière est en panne ? Nos chauffagistes experts interviennent rapidement pour un dépannage efficace et durable."
+  cta="Dépannage Express"
+  image="/images/reparation-chaudiere.webp"
+/>
 
-Votre chaudière est en panne à {props.ville} ? Nos chauffagistes experts interviennent sous {props.response_time} pour un dépannage rapide et efficace.
+<ResponseTimeIndicator time={props.response_time} />
 
-## Notre service dépannage chaudière
+<div className="mt-8 mb-12 text-center">
+  <h2 className="text-3xl font-bold mb-6 text-blue-800 bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent">
+    Votre chaudière vous lâche ? Nous intervenons en urgence !
+  </h2>
+  <p className="text-lg max-w-3xl mx-auto text-gray-700">
+    Une panne de chaudière peut rapidement devenir problématique, surtout en période hivernale. 
+    Nos techniciens chauffagistes certifiés sont disponibles pour intervenir rapidement à {props.ville} 
+    et résoudre efficacement tous vos problèmes de chauffage.
+  </p>
+</div>
 
-- Diagnostic professionnel immédiat
-- Réparation toutes marques
-- Pièces d'origine disponibles
-- Garantie intervention
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+  <ServiceCard 
+    icon={FaTools}
+    title="Diagnostic expert"
+    description="Analyse complète de votre chaudière pour identifier avec précision l'origine de la panne."
+  />
+  <ServiceCard 
+    icon={FaWrench}
+    title="Réparation toutes marques"
+    description="Intervention sur tous types de chaudières : gaz, fioul, électrique, condensation ou basse température."
+  />
+  <ServiceCard 
+    icon={MdOutlineHomeRepairService}
+    title="Pièces d'origine"
+    description="Utilisation exclusive de pièces d'origine constructeur pour garantir fiabilité et durabilité."
+  />
+</div>
 
-{props.ville === 'Lyon' && (
-  <>
-    ## Dépannage chaudière Lyon
+<div className="bg-blue-50 p-6 rounded-xl mb-12">
+  <h2 className="text-2xl font-bold mb-4 text-center text-blue-800">
+    <MdWarning className="inline-block mr-2 text-yellow-600" />
+    Signes que votre chaudière nécessite une intervention
+  </h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+    <div className="bg-white p-4 rounded-lg shadow-md">
+      <div className="flex items-center mb-2">
+        <BsThermometerHigh className="text-red-500 text-xl mr-2" />
+        <h3 className="font-semibold text-lg">Absence de chauffage</h3>
+      </div>
+      <p className="text-gray-700">Radiateurs froids ou chauffage insuffisant malgré un thermostat bien réglé.</p>
+    </div>
+    
+    <div className="bg-white p-4 rounded-lg shadow-md">
+      <div className="flex items-center mb-2">
+        <GiWaterDrop className="text-blue-500 text-xl mr-2" />
+        <h3 className="font-semibold text-lg">Fuite d'eau</h3>
+      </div>
+      <p className="text-gray-700">Présence d'eau sous ou autour de votre chaudière, signe d'un problème d'étanchéité.</p>
+    </div>
+    
+    <div className="bg-white p-4 rounded-lg shadow-md">
+      <div className="flex items-center mb-2">
+        <FaThermometerHalf className="text-orange-500 text-xl mr-2" />
+        <h3 className="font-semibold text-lg">Pression anormale</h3>
+      </div>
+      <p className="text-gray-700">Manomètre indiquant une pression trop basse (moins de 1 bar) ou trop élevée (plus de 2,5 bars).</p>
+    </div>
+    
+    <div className="bg-white p-4 rounded-lg shadow-md">
+      <div className="flex items-center mb-2">
+        <GiHeatHaze className="text-red-500 text-xl mr-2" />
+        <h3 className="font-semibold text-lg">Bruits inhabituels</h3>
+      </div>
+      <p className="text-gray-700">Claquements, sifflements ou grondements provenant de votre installation de chauffage.</p>
+    </div>
+  </div>
+</div>
 
-    Notre expertise lyonnaise :
-    - Intervention tous arrondissements
-    - Techniciens certifiés toutes marques
-    - Stock de pièces important
-    - Service express centre-ville
-  </>
-)}
+<div className="mb-12">
+  <h2 className="text-2xl font-bold mb-6 text-center text-blue-800">
+    Nos prestations de réparation de chaudière
+  </h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="border border-gray-200 rounded-lg p-5 hover:shadow-lg transition-shadow">
+      <h3 className="text-xl font-semibold mb-3 flex items-center">
+        <MdEngineering className="text-blue-600 mr-2" />
+        Dépannage d'urgence
+      </h3>
+      <p className="text-gray-700">
+        Intervention rapide sous {props.response_time} pour rétablir votre chauffage et votre eau chaude sanitaire.
+      </p>
+    </div>
+    
+    <div className="border border-gray-200 rounded-lg p-5 hover:shadow-lg transition-shadow">
+      <h3 className="text-xl font-semibold mb-3 flex items-center">
+        <FaWrench className="text-blue-600 mr-2" />
+        Réparation complète
+      </h3>
+      <p className="text-gray-700">
+        Diagnostic approfondi et réparation de tous types de pannes : circuit hydraulique, brûleur, vanne gaz, etc.
+      </p>
+    </div>
+    
+    <div className="border border-gray-200 rounded-lg p-5 hover:shadow-lg transition-shadow">
+      <h3 className="text-xl font-semibold mb-3 flex items-center">
+        <BsGearFill className="text-blue-600 mr-2" />
+        Remplacement de pièces
+      </h3>
+      <p className="text-gray-700">
+        Changement de composants défectueux : pompe, vanne trois voies, échangeur, carte électronique, etc.
+      </p>
+    </div>
+    
+    <div className="border border-gray-200 rounded-lg p-5 hover:shadow-lg transition-shadow">
+      <h3 className="text-xl font-semibold mb-3 flex items-center">
+        <FaCalendarCheck className="text-blue-600 mr-2" />
+        Maintenance préventive
+      </h3>
+      <p className="text-gray-700">
+        Entretien régulier pour prévenir les pannes et optimiser les performances de votre chaudière.
+      </p>
+    </div>
+  </div>
+</div>
 
-{props.ville === 'Villeurbanne' && (
-  <>
-    ## Réparation chaudière Villeurbanne
+<div className="mb-12 bg-gradient-to-r from-blue-100 to-blue-50 p-6 rounded-xl">
+  <h2 className="text-2xl font-bold mb-6 text-center text-blue-800">
+    Marques de chaudières traitées
+  </h2>
+  
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+    {['Saunier Duval', 'Frisquet', 'Chaffoteaux', 'Viessmann', 'ELM Leblanc', 'De Dietrich', 'Atlantic', 'Vaillant'].map((marque) => (
+      <div key={marque} className="bg-white p-3 rounded-lg shadow-sm text-center">
+        <span className="font-medium text-gray-800">{marque}</span>
+      </div>
+    ))}
+  </div>
+  
+  <p className="text-center mt-4 text-gray-700">
+    Et bien d'autres marques ! Nos techniciens sont formés et certifiés pour intervenir sur tous types de chaudières.
+  </p>
+</div>
 
-    Notre service local :
-    - Intervention rapide tous quartiers
-    - Spécialistes chauffage
-    - Expertise habitat collectif
-    - Dépannage express
-  </>
-)}
+<div className="mb-12">
+  <h2 className="text-2xl font-bold mb-6 text-center text-blue-800">
+    Pannes courantes que nous réparons
+  </h2>
+  
+  <div className="space-y-4">
+    <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-blue-500">
+      <h3 className="font-semibold text-lg">Problèmes d'allumage</h3>
+      <p className="text-gray-700">Chaudière qui ne démarre pas, s'éteint intempestivement ou présente des difficultés d'allumage.</p>
+    </div>
+    
+    <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-blue-500">
+      <h3 className="font-semibold text-lg">Codes erreur</h3>
+      <p className="text-gray-700">Interprétation et résolution des codes erreur spécifiques à chaque marque de chaudière.</p>
+    </div>
+    
+    <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-blue-500">
+      <h3 className="font-semibold text-lg">Problèmes de pression</h3>
+      <p className="text-gray-700">Chute de pression, surpression, purge du circuit de chauffage et réparation des fuites.</p>
+    </div>
+    
+    <div className="bg-white p-4 rounded-lg shadow-md border-l-4 border-blue-500">
+      <h3 className="font-semibold text-lg">Dysfonctionnement eau chaude</h3>
+      <p className="text-gray-700">Eau insuffisamment chaude, débit réduit ou absence totale d'eau chaude sanitaire.</p>
+    </div>
+  </div>
+</div>
 
-{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
-  <>
-    ## Service chaudière à {props.ville}
+<EmergencyCallToAction
+  title="Besoin d'une intervention urgente ?"
+  description={`Nos chauffagistes sont disponibles pour un dépannage rapide à ${props.ville}.`}
+  buttonText="Appeler maintenant"
+/>
 
-    Notre engagement :
-    - Intervention sous {props.response_time}
-    - Techniciens qualifiés
-    - Devis transparent
-    - Suivi personnalisé
-  </>
-)}
+<div className="mb-12">
+  <h2 className="text-2xl font-bold mb-6 text-center text-blue-800">
+    Pourquoi choisir nos services de réparation de chaudière ?
+  </h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="bg-white p-5 rounded-lg shadow-md text-center">
+      <FaClock className="text-4xl text-blue-500 mx-auto mb-3" />
+      <h3 className="text-lg font-semibold mb-2">Rapidité d'intervention</h3>
+      <p className="text-gray-700">
+        Techniciens disponibles sous {props.response_time} pour les urgences à {props.ville}.
+      </p>
+    </div>
+    
+    <div className="bg-white p-5 rounded-lg shadow-md text-center">
+      <FaUserTie className="text-4xl text-blue-500 mx-auto mb-3" />
+      <h3 className="text-lg font-semibold mb-2">Expertise certifiée</h3>
+      <p className="text-gray-700">
+        Chauffagistes qualifiés et régulièrement formés aux dernières technologies.
+      </p>
+    </div>
+    
+    <div className="bg-white p-5 rounded-lg shadow-md text-center">
+      <FaMoneyBillWave className="text-4xl text-blue-500 mx-auto mb-3" />
+      <h3 className="text-lg font-semibold mb-2">Tarifs transparents</h3>
+      <p className="text-gray-700">
+        Devis détaillé gratuit avant intervention, sans frais cachés.
+      </p>
+    </div>
+  </div>
+</div>
 
-## Marques traitées
+<div className="mb-12">
+  <h2 className="text-2xl font-bold mb-6 text-center text-blue-800">
+    Témoignages de nos clients
+  </h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="bg-white p-5 rounded-lg shadow-md">
+      <div className="flex items-start mb-4">
+        <div className="mr-4">
+          <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+            <span className="text-blue-700 font-bold">M</span>
+          </div>
+        </div>
+        <div>
+          <h3 className="font-semibold">Michel D.</h3>
+          <div className="flex text-yellow-400 mb-2">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p className="text-gray-700">
+            "Intervention rapide et efficace suite à une panne totale de ma chaudière en plein hiver. 
+            Le technicien a identifié le problème en quelques minutes et a pu la réparer le jour même. Service impeccable !"
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div className="bg-white p-5 rounded-lg shadow-md">
+      <div className="flex items-start mb-4">
+        <div className="mr-4">
+          <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
+            <span className="text-blue-700 font-bold">S</span>
+          </div>
+        </div>
+        <div>
+          <h3 className="font-semibold">Sophie L.</h3>
+          <div className="flex text-yellow-400 mb-2">
+            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+          </div>
+          <p className="text-gray-700">
+            "Ma chaudière Saunier Duval affichait un code erreur que je ne comprenais pas. 
+            Le technicien m'a tout expliqué clairement et a résolu le problème rapidement. 
+            Très professionnel et prix raisonnable."
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-- Saunier Duval
-- Frisquet
-- Chaffoteaux
-- Viessmann
-- ELM Leblanc
-- De Dietrich
-- Atlantic
-- Vaillant
-
-## Pannes courantes
-
-- Pression insuffisante
-- Absence de chauffage
-- Bruit anormal
-- Code erreur
-- Fuite chaudière
-- Dysfonctionnement thermostat
-- Problème d'allumage
-
-## Nos prestations
-
-- Dépannage d'urgence
-- Réparation
-- Maintenance
-- Remplacement pièces
-- Détartrage
-- Optimisation rendement
-- Mise aux normes
-
-## Pourquoi nous choisir ?
-
-1. **Rapidité** : Intervention sous {props.response_time}
-2. **Expertise** : Techniciens agréés toutes marques
-3. **Disponibilité** : Service d'urgence 7j/7
-4. **Qualité** : Pièces d'origine garanties
-5. **Transparence** : Devis détaillé gratuit
+<Guarantees />

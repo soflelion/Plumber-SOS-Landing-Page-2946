@@ -1,87 +1,266 @@
+import { HeroAnimation, ResponseTimeIndicator, ServiceCard, EmergencyCallToAction, Guarantees, Testimonial } from '../../components/WaterLeakComponents';
+import { FaTools, FaWrench, FaExchangeAlt, FaShieldAlt, FaThermometerHalf, FaWater, FaExclamationTriangle } from 'react-icons/fa';
+
 export const props = ['ville', 'response_time', 'service'];
 
-# {props.service} à {props.ville}
+<HeroAnimation />
 
-Fuite sur votre cumulus à {props.ville} ? Nos plombiers interviennent en urgence sous {props.response_time} pour réparer ou remplacer votre chauffe-eau.
+<div className="mb-12 mt-8">
+  <h1 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">Réparation fuite cumulus à {props.ville}</h1>
 
-## Notre service cumulus
+  <div className="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-8">
+    <span className="text-blue-600 font-bold">Fuite sur votre cumulus à {props.ville} ?</span> Nos plombiers interviennent en urgence sous {props.response_time} pour réparer ou remplacer votre chauffe-eau.
+  </div>
 
-- Diagnostic rapide
-- Réparation toutes marques
-- Remplacement si nécessaire
-- Installation aux normes
+  <ResponseTimeIndicator time={props.response_time} />
+</div>
 
-{props.ville === 'Lyon' && (
-  <>
-    ## Réparation cumulus Lyon
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-16">
+  <ServiceCard 
+    icon={FaTools} 
+    title="Diagnostic rapide" 
+    description="Identification précise de l'origine de la fuite sur votre cumulus"
+  />
+  <ServiceCard 
+    icon={FaWrench} 
+    title="Réparation toutes marques" 
+    description="Intervention sur tous types de chauffe-eau, quelle que soit la marque"
+  />
+  <ServiceCard 
+    icon={FaExchangeAlt} 
+    title="Remplacement si nécessaire" 
+    description="Installation d'un nouveau cumulus si la réparation n'est pas possible"
+  />
+  <ServiceCard 
+    icon={FaShieldAlt} 
+    title="Installation aux normes" 
+    description="Mise en conformité selon les normes de sécurité en vigueur"
+  />
+</div>
 
-    Notre expertise lyonnaise :
-    - Intervention tous arrondissements
-    - Stock de cumulus disponible
-    - Installation jour même
-    - Spécialistes multi-marques
-  </>
-)}
+<div className="bg-blue-50 rounded-xl p-8 my-16 shadow-md">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-blue-600">Signes d'une fuite sur votre cumulus</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-blue-600 mb-3">Eau au pied du cumulus</h3>
+      <div className="text-gray-700">Présence d'eau ou d'humidité autour de la base de votre chauffe-eau</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-blue-600 mb-3">Baisse de pression</h3>
+      <div className="text-gray-700">Diminution de la pression d'eau chaude dans votre logement</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-blue-600 mb-3">Eau chaude insuffisante</h3>
+      <div className="text-gray-700">Quantité d'eau chaude réduite ou épuisement plus rapide que d'habitude</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-blue-600 mb-3">Traces de rouille</h3>
+      <div className="text-gray-700">Présence de rouille ou de corrosion sur le réservoir ou les raccords</div>
+    </div>
+  </div>
+</div>
 
-{props.ville === 'Villeurbanne' && (
-  <>
-    ## Service cumulus Villeurbanne
+<EmergencyCallToAction />
 
-    Notre service local :
-    - Intervention express tous quartiers
-    - Expertise immeubles collectifs
-    - Remplacement rapide
-    - Solutions adaptées
-  </>
-)}
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Types d'interventions sur cumulus</h2>
+  
+  <div className="relative">
+    <div className="absolute left-1/2 -ml-0.5 w-0.5 h-full bg-gradient-to-b from-primary to-secondary"></div>
+    
+    <div className="grid grid-cols-1 gap-8 mb-12 relative">
+      <div className="bg-white rounded-lg shadow-md p-6 ml-0 md:ml-8 relative">
+        <div className="absolute top-6 -left-4 md:-left-12 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">1</div>
+        <h3 className="text-xl font-bold mb-3">Réparation de fuite</h3>
+        <div className="text-gray-700">
+          Identification et réparation des fuites sur le corps du cumulus, les joints, les raccords ou le groupe de sécurité pour stopper rapidement tout écoulement d'eau.
+        </div>
+      </div>
+      
+      <div className="bg-white rounded-lg shadow-md p-6 ml-0 md:ml-8 relative">
+        <div className="absolute top-6 -left-4 md:-left-12 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">2</div>
+        <h3 className="text-xl font-bold mb-3">Remplacement de composants</h3>
+        <div className="text-gray-700">
+          Changement des pièces défectueuses comme la résistance, le thermostat, l'anode magnésium ou le groupe de sécurité pour restaurer le fonctionnement optimal.
+        </div>
+      </div>
+      
+      <div className="bg-white rounded-lg shadow-md p-6 ml-0 md:ml-8 relative">
+        <div className="absolute top-6 -left-4 md:-left-12 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">3</div>
+        <h3 className="text-xl font-bold mb-3">Détartrage</h3>
+        <div className="text-gray-700">
+          Élimination du calcaire accumulé dans le réservoir et sur les composants, améliorant ainsi l'efficacité énergétique et prolongeant la durée de vie de l'appareil.
+        </div>
+      </div>
+      
+      <div className="bg-white rounded-lg shadow-md p-6 ml-0 md:ml-8 relative">
+        <div className="absolute top-6 -left-4 md:-left-12 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">4</div>
+        <h3 className="text-xl font-bold mb-3">Remplacement complet</h3>
+        <div className="text-gray-700">
+          Installation d'un nouveau cumulus lorsque la réparation n'est pas possible ou économiquement viable, avec conseils sur le choix du modèle adapté à vos besoins.
+        </div>
+      </div>
+      
+      <div className="bg-white rounded-lg shadow-md p-6 ml-0 md:ml-8 relative">
+        <div className="absolute top-6 -left-4 md:-left-12 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">5</div>
+        <h3 className="text-xl font-bold mb-3">Mise aux normes</h3>
+        <div className="text-gray-700">
+          Vérification et mise en conformité de l'installation selon les normes de sécurité en vigueur, incluant le raccordement électrique et hydraulique.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
-  <>
-    ## Dépannage cumulus à {props.ville}
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Causes fréquentes de fuite sur un cumulus</h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
+        <FaWater className="text-white text-5xl" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-3">Usure et corrosion</h3>
+        <div className="text-gray-700">
+          Avec le temps, la cuve du cumulus peut se corroder, surtout si l'anode magnésium n'est pas remplacée régulièrement. Les joints peuvent également se détériorer.
+        </div>
+      </div>
+    </div>
+    
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="h-48 bg-gradient-to-r from-blue-600 to-blue-700 flex items-center justify-center">
+        <FaThermometerHalf className="text-white text-5xl" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-3">Calcaire et entartrage</h3>
+        <div className="text-gray-700">
+          L'accumulation de calcaire peut endommager la résistance et créer des microfissures dans la cuve, provoquant des fuites et réduisant l'efficacité du chauffage.
+        </div>
+      </div>
+    </div>
+    
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="h-48 bg-gradient-to-r from-blue-700 to-blue-800 flex items-center justify-center">
+        <FaExclamationTriangle className="text-white text-5xl" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-3">Pression excessive</h3>
+        <div className="text-gray-700">
+          Une pression d'eau trop élevée ou un groupe de sécurité défectueux peut entraîner des fuites au niveau des joints ou même provoquer des fissures dans la cuve.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    Notre engagement :
-    - Intervention sous {props.response_time}
-    - Techniciens qualifiés
-    - Stock permanent
-    - Installation garantie
-  </>
-)}
+<div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-8 my-16 shadow-md">
+  <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">Marques de cumulus traitées</h2>
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+    <div className="bg-white rounded-lg p-4 shadow-sm flex flex-col items-center">
+      <h3 className="font-bold text-primary mb-3">Atlantic</h3>
+      <div className="text-sm text-gray-700 text-center">Expertise sur toute la gamme</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm flex flex-col items-center">
+      <h3 className="font-bold text-primary mb-3">Thermor</h3>
+      <div className="text-sm text-gray-700 text-center">Réparation et remplacement</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm flex flex-col items-center">
+      <h3 className="font-bold text-primary mb-3">Sauter</h3>
+      <div className="text-sm text-gray-700 text-center">Service complet</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm flex flex-col items-center">
+      <h3 className="font-bold text-primary mb-3">De Dietrich</h3>
+      <div className="text-sm text-gray-700 text-center">Techniciens formés</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm flex flex-col items-center">
+      <h3 className="font-bold text-primary mb-3">Chaffoteaux</h3>
+      <div className="text-sm text-gray-700 text-center">Pièces d'origine</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm flex flex-col items-center">
+      <h3 className="font-bold text-primary mb-3">Ariston</h3>
+      <div className="text-sm text-gray-700 text-center">Intervention rapide</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm flex flex-col items-center">
+      <h3 className="font-bold text-primary mb-3">Pacific</h3>
+      <div className="text-sm text-gray-700 text-center">Solutions adaptées</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm flex flex-col items-center">
+      <h3 className="font-bold text-primary mb-3">Equation</h3>
+      <div className="text-sm text-gray-700 text-center">Garantie fabricant</div>
+    </div>
+  </div>
+</div>
 
-## Types d'interventions
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Nos garanties</h2>
+  <Guarantees />
+</div>
 
-- Réparation fuite
-- Remplacement résistance
-- Changement thermostat
-- Remplacement complet
-- Détartrage
-- Maintenance préventive
-- Mise aux normes
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Témoignages clients</h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <Testimonial 
+      name="Jean-Pierre M." 
+      location={`${props.ville}`} 
+      quote="Intervention très rapide suite à une fuite importante sur mon cumulus. Le technicien a identifié le problème immédiatement et a pu le réparer sans avoir à remplacer l'appareil. Travail propre et efficace, je recommande !"
+    />
+    <Testimonial 
+      name="Isabelle L." 
+      location={`${props.ville}`} 
+      quote="Mon ancien cumulus était irréparable. Le plombier m'a conseillé sur le modèle le plus adapté à mes besoins et l'a installé le jour même. Service impeccable et prix transparent, sans mauvaise surprise."
+    />
+  </div>
+</div>
 
-## Marques traitées
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Pourquoi nous choisir ?</h2>
 
-- Atlantic
-- Thermor
-- Sauter
-- De Dietrich
-- Chaffoteaux
-- Ariston
-- Pacific
-- Equation
-
-## Causes fréquentes
-
-- Joint usé
-- Corrosion
-- Pression excessive
-- Calcaire
-- Thermostat défectueux
-- Résistance percée
-- Raccords défectueux
-
-## Pourquoi nous choisir ?
-
-1. **Urgence** : Intervention sous {props.response_time}
-2. **Stock** : Cumulus disponibles
-3. **Expertise** : Techniciens certifiés
-4. **Garantie** : Pièces et main d'œuvre
-5. **Prix** : Devis gratuit et transparent
+  <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-8 shadow-md">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">1</span>
+          <h3 className="font-semibold">Urgence</h3>
+        </div>
+        <div className="text-sm text-gray-600">Intervention sous {props.response_time} pour limiter les dégâts</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">2</span>
+          <h3 className="font-semibold">Stock</h3>
+        </div>
+        <div className="text-sm text-gray-600">Large gamme de cumulus disponibles pour remplacement immédiat</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">3</span>
+          <h3 className="font-semibold">Expertise</h3>
+        </div>
+        <div className="text-sm text-gray-600">Techniciens certifiés et formés sur toutes les marques</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">4</span>
+          <h3 className="font-semibold">Garantie</h3>
+        </div>
+        <div className="text-sm text-gray-600">Pièces et main d'œuvre garanties pour votre tranquillité</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">5</span>
+          <h3 className="font-semibold">Prix</h3>
+        </div>
+        <div className="text-sm text-gray-600">Devis gratuit et transparent, sans frais cachés</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">6</span>
+          <h3 className="font-semibold">Conseil</h3>
+        </div>
+        <div className="text-sm text-gray-600">Recommandations personnalisées pour optimiser votre installation</div>
+      </div>
+    </div>
+  </div>
+</div>

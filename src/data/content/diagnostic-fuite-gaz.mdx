@@ -1,84 +1,258 @@
+import { HeroAnimation, ResponseTimeIndicator, ServiceCard, EmergencyCallToAction, Guarantees, Testimonial } from '../../components/WaterLeakComponents';
+import { FaSearch, FaClipboardCheck, FaFileAlt, FaShieldAlt, FaTools, FaGasPump, FaExclamationTriangle } from 'react-icons/fa';
+
 export const props = ['ville', 'response_time', 'service'];
 
-# {props.service} à {props.ville}
+<HeroAnimation />
 
-Suspicion de fuite de gaz à {props.ville} ? Nos techniciens certifiés interviennent sous {props.response_time} pour un diagnostic professionnel et sécurisé.
+<div className="mb-12 mt-8">
+  <h1 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">Diagnostic fuite de gaz à {props.ville}</h1>
 
-## Notre service diagnostic gaz
+  <div className="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-8">
+    <span className="text-red-600 font-bold">⚠️ Suspicion de fuite de gaz ?</span> Nos techniciens certifiés interviennent sous {props.response_time} pour un diagnostic professionnel et sécurisé.
+  </div>
 
-- Détection professionnelle
-- Rapport détaillé
-- Certificat de conformité
-- Conseils de sécurité
+  <ResponseTimeIndicator time={props.response_time} />
+</div>
 
-{props.ville === 'Lyon' && (
-  <>
-    ## Diagnostic gaz Lyon
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-16">
+  <ServiceCard 
+    icon={FaSearch} 
+    title="Détection professionnelle" 
+    description="Localisation précise des fuites avec matériel spécialisé"
+  />
+  <ServiceCard 
+    icon={FaClipboardCheck} 
+    title="Rapport détaillé" 
+    description="Documentation complète de l'inspection et des résultats"
+  />
+  <ServiceCard 
+    icon={FaFileAlt} 
+    title="Certificat de conformité" 
+    description="Document officiel attestant la sécurité de votre installation"
+  />
+  <ServiceCard 
+    icon={FaShieldAlt} 
+    title="Conseils de sécurité" 
+    description="Recommandations personnalisées pour votre installation"
+  />
+</div>
 
-    Notre expertise lyonnaise :
-    - Intervention tous arrondissements
-    - Techniciens certifiés QUALIGAZ
-    - Connaissance réseau local
-    - Partenaire fournisseurs gaz
-  </>
-)}
+<div className="bg-red-50 rounded-xl p-8 my-16 shadow-md">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-6 text-red-600">Signes d'une fuite de gaz</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-red-600 mb-3">Odeur caractéristique</h3>
+      <div className="text-gray-700">Une odeur de soufre ou d'œuf pourri est le signe le plus évident d'une fuite de gaz</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-red-600 mb-3">Bruit de sifflement</h3>
+      <div className="text-gray-700">Un sifflement près des conduites ou des appareils peut indiquer une fuite</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-red-600 mb-3">Végétation morte</h3>
+      <div className="text-gray-700">Des plantes qui meurent sans raison apparente près des conduites de gaz</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-red-600 mb-3">Symptômes physiques</h3>
+      <div className="text-gray-700">Maux de tête, étourdissements, nausées ou fatigue inexpliquée</div>
+    </div>
+  </div>
+</div>
 
-{props.ville === 'Villeurbanne' && (
-  <>
-    ## Service diagnostic gaz Villeurbanne
+<EmergencyCallToAction />
 
-    Notre service local :
-    - Intervention express tous quartiers
-    - Spécialistes installations collectives
-    - Équipement dernière génération
-    - Expertise reconnue
-  </>
-)}
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Notre processus de diagnostic</h2>
+  
+  <div className="relative">
+    <div className="absolute left-1/2 -ml-0.5 w-0.5 h-full bg-gradient-to-b from-primary to-secondary"></div>
+    
+    <div className="grid grid-cols-1 gap-8 mb-12 relative">
+      <div className="bg-white rounded-lg shadow-md p-6 ml-0 md:ml-8 relative">
+        <div className="absolute top-6 -left-4 md:-left-12 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">1</div>
+        <h3 className="text-xl font-bold mb-3">Inspection visuelle</h3>
+        <div className="text-gray-700">
+          Examen minutieux de toutes les installations de gaz, des raccordements et des appareils pour détecter tout signe visible de problème.
+        </div>
+      </div>
+      
+      <div className="bg-white rounded-lg shadow-md p-6 ml-0 md:ml-8 relative">
+        <div className="absolute top-6 -left-4 md:-left-12 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">2</div>
+        <h3 className="text-xl font-bold mb-3">Test d'étanchéité</h3>
+        <div className="text-gray-700">
+          Réalisation de mesures précises pour vérifier l'étanchéité de l'ensemble du système de gaz et identifier les fuites potentielles.
+        </div>
+      </div>
+      
+      <div className="bg-white rounded-lg shadow-md p-6 ml-0 md:ml-8 relative">
+        <div className="absolute top-6 -left-4 md:-left-12 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">3</div>
+        <h3 className="text-xl font-bold mb-3">Détection de fuites</h3>
+        <div className="text-gray-700">
+          Utilisation d'équipements spécialisés de haute précision pour localiser exactement l'origine des fuites, même les plus infimes.
+        </div>
+      </div>
+      
+      <div className="bg-white rounded-lg shadow-md p-6 ml-0 md:ml-8 relative">
+        <div className="absolute top-6 -left-4 md:-left-12 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">4</div>
+        <h3 className="text-xl font-bold mb-3">Analyse des risques</h3>
+        <div className="text-gray-700">
+          Évaluation complète des dangers potentiels et des mesures à prendre pour sécuriser l'installation et protéger les occupants.
+        </div>
+      </div>
+      
+      <div className="bg-white rounded-lg shadow-md p-6 ml-0 md:ml-8 relative">
+        <div className="absolute top-6 -left-4 md:-left-12 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold">5</div>
+        <h3 className="text-xl font-bold mb-3">Rapport détaillé</h3>
+        <div className="text-gray-700">
+          Fourniture d'une documentation exhaustive comprenant les résultats du diagnostic, les problèmes identifiés et les recommandations.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
-  <>
-    ## Diagnostic gaz à {props.ville}
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Nos garanties</h2>
+  <Guarantees />
+</div>
 
-    Notre engagement :
-    - Intervention sous {props.response_time}
-    - Techniciens habilités
-    - Matériel professionnel
-    - Rapport complet
-  </>
-)}
+<div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-8 my-16 shadow-md">
+  <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">Points de contrôle</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Raccordements gaz</h3>
+      <div className="text-gray-700">Vérification de l'étanchéité et de la conformité de tous les raccordements au réseau de gaz.</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Tuyauterie apparente</h3>
+      <div className="text-gray-700">Inspection visuelle et test d'étanchéité de l'ensemble des canalisations visibles.</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Ventilation des locaux</h3>
+      <div className="text-gray-700">Contrôle des systèmes de ventilation pour garantir l'évacuation correcte des gaz.</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Appareils à gaz</h3>
+      <div className="text-gray-700">Vérification du fonctionnement et de la sécurité de tous les appareils utilisant du gaz.</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Robinets de commande</h3>
+      <div className="text-gray-700">Test de fonctionnement des robinets d'arrêt et vérification de leur accessibilité.</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Flexibles de raccordement</h3>
+      <div className="text-gray-700">Contrôle de l'état et de la date de péremption des flexibles reliant les appareils.</div>
+    </div>
+  </div>
+</div>
 
-## Notre processus de diagnostic
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Équipements contrôlés</h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="h-48 bg-gradient-to-r from-orange-500 to-orange-600 flex items-center justify-center">
+        <FaGasPump className="text-white text-5xl" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-3">Chaudières et chauffe-eau</h3>
+        <div className="text-gray-700">
+          Vérification complète des chaudières et chauffe-eau à gaz, incluant les brûleurs, le système d'évacuation et les dispositifs de sécurité.
+        </div>
+      </div>
+    </div>
+    
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="h-48 bg-gradient-to-r from-orange-600 to-orange-700 flex items-center justify-center">
+        <FaTools className="text-white text-5xl" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-3">Cuisinières et appareils</h3>
+        <div className="text-gray-700">
+          Contrôle des cuisinières, fours, plaques de cuisson et autres appareils domestiques fonctionnant au gaz.
+        </div>
+      </div>
+    </div>
+    
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="h-48 bg-gradient-to-r from-orange-700 to-orange-800 flex items-center justify-center">
+        <FaExclamationTriangle className="text-white text-5xl" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-3">Installations collectives</h3>
+        <div className="text-gray-700">
+          Diagnostic des systèmes de gaz dans les immeubles collectifs, incluant les colonnes montantes et les compteurs.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-1. **Inspection visuelle** : Vérification installations
-2. **Test étanchéité** : Mesures précises
-3. **Détection fuites** : Équipement spécialisé
-4. **Analyse risques** : Évaluation complète
-5. **Rapport détaillé** : Documentation exhaustive
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Témoignages clients</h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <Testimonial 
+      name="Laurent M." 
+      location={`${props.ville}`} 
+      quote="Très satisfait du diagnostic réalisé. Le technicien a été méticuleux et m'a expliqué tous les points de contrôle. Le rapport fourni est complet et détaillé. Je recommande vivement ce service."
+    />
+    <Testimonial 
+      name="Marie D." 
+      location={`${props.ville}`} 
+      quote="Suite à une odeur suspecte, j'ai fait appel à leurs services. Intervention rapide et professionnelle. Le technicien a identifié une petite fuite sur un raccord et l'a réparée immédiatement. Merci pour votre efficacité !"
+    />
+  </div>
+</div>
 
-## Points de contrôle
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Pourquoi nous choisir ?</h2>
 
-- Raccordements gaz
-- Tuyauterie apparente
-- Ventilation locaux
-- Appareils gaz
-- Robinets de commande
-- Flexibles de raccordement
-- Étanchéité générale
-
-## Équipements contrôlés
-
-- Chaudières gaz
-- Cuisinières
-- Chauffe-eau gaz
-- Radiateurs gaz
-- Installations collectives
-- Compteurs gaz
-- Vannes de sécurité
-
-## Pourquoi nous choisir ?
-
-1. **Certification** : Techniciens agréés
-2. **Rapidité** : Intervention sous {props.response_time}
-3. **Précision** : Matériel haute technologie
-4. **Sécurité** : Protocoles stricts
-5. **Documentation** : Rapport complet fourni
+  <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-8 shadow-md">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">1</span>
+          <h3 className="font-semibold">Certification</h3>
+        </div>
+        <div className="text-sm text-gray-600">Techniciens agréés et certifiés pour les interventions gaz</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">2</span>
+          <h3 className="font-semibold">Rapidité</h3>
+        </div>
+        <div className="text-sm text-gray-600">Intervention sous {props.response_time} garantie</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">3</span>
+          <h3 className="font-semibold">Précision</h3>
+        </div>
+        <div className="text-sm text-gray-600">Équipements de détection de haute technologie</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">4</span>
+          <h3 className="font-semibold">Sécurité</h3>
+        </div>
+        <div className="text-sm text-gray-600">Protocoles stricts respectant toutes les normes en vigueur</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">5</span>
+          <h3 className="font-semibold">Documentation</h3>
+        </div>
+        <div className="text-sm text-gray-600">Rapport complet et certificat de conformité fournis</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">6</span>
+          <h3 className="font-semibold">Service client</h3>
+        </div>
+        <div className="text-sm text-gray-600">Disponibilité et suivi personnalisé de votre dossier</div>
+      </div>
+    </div>
+  </div>
+</div>

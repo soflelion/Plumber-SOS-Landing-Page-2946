@@ -149,17 +149,19 @@ export const EmergencyCallToAction = () => {
 };
 
 // Composant pour les garanties
-export const Guarantees = () => {
-  const guarantees = [
+export const Guarantees = ({ guarantees }) => {
+  const defaultGuarantees = [
     { icon: FaClock, title: "Intervention rapide", description: "Nos plombiers arrivent en moins de 30 minutes", color: "from-blue-400 to-blue-600" },
     { icon: FaTools, title: "Équipement professionnel", description: "Matériel de pointe pour une réparation efficace", color: "from-primary to-primary-dark" },
     { icon: FaShieldAlt, title: "Garantie satisfaction", description: "Travail soigné et garanti", color: "from-secondary to-secondary-dark" },
     { icon: FaCheckCircle, title: "Devis transparent", description: "Prix clairs et sans surprise", color: "from-green-400 to-green-600" }
   ];
 
+  const itemsToDisplay = guarantees || defaultGuarantees;
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 my-8">
-      {guarantees.map((item, index) => (
+      {itemsToDisplay.map((item, index) => (
         <motion.div
           key={index}
           className="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-md border-t-2 border-primary"
@@ -168,8 +170,12 @@ export const Guarantees = () => {
           transition={{ duration: 0.3, delay: index * 0.1 }}
           whileHover={{ y: -5, boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1)' }}
         >
-          <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${item.color} flex items-center justify-center mb-4 shadow-md`}>
-            <item.icon className="text-2xl text-white" />
+          <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${item.color || "from-primary to-primary-dark"} flex items-center justify-center mb-4 shadow-md`}>
+            {React.isValidElement(item.icon) ? (
+              item.icon
+            ) : (
+              item.icon && <item.icon className="text-2xl text-white" />
+            )}
           </div>
           <h3 className="font-bold text-lg mb-2 text-gray-800">{item.title}</h3>
           <p className="text-gray-600">{item.description}</p>

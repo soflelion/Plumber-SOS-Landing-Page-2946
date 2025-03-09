@@ -1,76 +1,244 @@
+import { HeroAnimation, ResponseTimeIndicator, ServiceCard, EmergencyCallToAction, Guarantees, Testimonial } from '../../components/WaterLeakComponents';
+import { FaTools, FaWrench, FaShower, FaCheckCircle, FaShieldAlt, FaClock, FaUserTie, FaCalendarCheck, FaMoneyBillWave } from 'react-icons/fa';
+import { GiWaterTank, GiWaterDrop, GiHeatHaze } from 'react-icons/gi';
+import { MdEngineering, MdOutlineHomeRepairService, MdWarning, MdWaterDrop } from 'react-icons/md';
+import { BsThermometerHigh, BsLightningCharge } from 'react-icons/bs';
+
 export const props = ['ville', 'response_time', 'service'];
 
-# {props.service} à {props.ville}
+<HeroAnimation 
+  title="Réparation de chauffe-eau en panne à {props.ville}"
+  description="Plus d'eau chaude ? Notre équipe de plombiers chauffagistes intervient en urgence à {props.ville} en moins de {props.response_time}."
+  cta="Dépannage Express"
+  image="/images/chauffe-eau-panne.webp"
+/>
 
-Votre chauffe-eau est en panne à {props.ville} ? Nos plombiers chauffagistes interviennent en moins de {props.response_time} pour diagnostiquer et réparer votre chauffe-eau.
+<div className="mb-12 mt-8">
+  <h1 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">Réparation de chauffe-eau en panne à {props.ville}</h1>
 
-## Notre service chauffe-eau
+  <div className="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-8">
+    Plus d'eau chaude ? Notre équipe de plombiers chauffagistes intervient en urgence à {props.ville} en moins de {props.response_time}.
+  </div>
 
-- Diagnostic rapide et précis
-- Réparation toutes marques
-- Installation de chauffe-eau neuf
-- Maintenance préventive
+  <ResponseTimeIndicator time={props.response_time} />
+</div>
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-16">
+  <ServiceCard 
+    icon={FaTools}
+    title="Diagnostic expert" 
+    description="Analyse complète de votre chauffe-eau pour identifier avec précision l'origine de la panne"
+  />
+  <ServiceCard 
+    icon={FaWrench}
+    title="Réparation toutes marques" 
+    description="Intervention sur tous types de chauffe-eau : électrique, gaz, thermodynamique ou solaire"
+  />
+  <ServiceCard 
+    icon={MdOutlineHomeRepairService}
+    title="Installation neuve" 
+    description="Remplacement et installation de chauffe-eau neufs adaptés à vos besoins et votre budget"
+  />
+  <ServiceCard 
+    icon={GiWaterTank}
+    title="Entretien préventif" 
+    description="Maintenance régulière pour prolonger la durée de vie de votre équipement"
+  />
+</div>
+
+<EmergencyCallToAction 
+  title="Besoin d'une intervention urgente ?"
+  description={`Nos plombiers chauffagistes sont disponibles pour un dépannage rapide à ${props.ville}.`}
+  buttonText="Appeler maintenant"
+/>
+
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Nos garanties</h2>
+  <Guarantees />
+</div>
+
+<div className="bg-blue-50 p-8 rounded-xl my-16 shadow-md">
+  <h2 className="text-2xl font-bold mb-6 text-center text-blue-800">
+    Signes que votre chauffe-eau nécessite une intervention
+  </h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+    <div className="flex items-start p-4 bg-white rounded-lg shadow-sm">
+      <MdWarning className="text-yellow-500 text-xl mr-3 mt-1 flex-shrink-0" />
+      <div>
+        <h3 className="font-semibold text-gray-800">Eau insuffisamment chaude</h3>
+        <p className="text-gray-600">L'eau n'atteint plus la température souhaitée ou se refroidit rapidement.</p>
+      </div>
+    </div>
+    
+    <div className="flex items-start p-4 bg-white rounded-lg shadow-sm">
+      <MdWarning className="text-yellow-500 text-xl mr-3 mt-1 flex-shrink-0" />
+      <div>
+        <h3 className="font-semibold text-gray-800">Bruits anormaux</h3>
+        <p className="text-gray-600">Claquements, sifflements ou grondements provenant de votre chauffe-eau.</p>
+      </div>
+    </div>
+    
+    <div className="flex items-start p-4 bg-white rounded-lg shadow-sm">
+      <MdWarning className="text-yellow-500 text-xl mr-3 mt-1 flex-shrink-0" />
+      <div>
+        <h3 className="font-semibold text-gray-800">Fuites d'eau</h3>
+        <p className="text-gray-600">Présence d'eau autour de l'appareil ou sur les raccords.</p>
+      </div>
+    </div>
+    
+    <div className="flex items-start p-4 bg-white rounded-lg shadow-sm">
+      <MdWarning className="text-yellow-500 text-xl mr-3 mt-1 flex-shrink-0" />
+      <div>
+        <h3 className="font-semibold text-gray-800">Eau décolorée ou odorante</h3>
+        <p className="text-gray-600">Eau rouillée, trouble ou dégageant une odeur désagréable.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Types de chauffe-eau que nous réparons</h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-primary">
+      <div className="flex items-center mb-4">
+        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+          <BsLightningCharge className="text-primary text-xl" />
+        </div>
+        <h3 className="text-xl font-bold text-gray-800">Chauffe-eau électrique</h3>
+      </div>
+      <p className="text-gray-700">Réparation de tous modèles de chauffe-eau électriques : problèmes de résistance, thermostat défectueux, remplacement d'anode.</p>
+    </div>
+    
+    <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-primary">
+      <div className="flex items-center mb-4">
+        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+          <GiHeatHaze className="text-primary text-xl" />
+        </div>
+        <h3 className="text-xl font-bold text-gray-800">Chauffe-eau à gaz</h3>
+      </div>
+      <p className="text-gray-700">Intervention sur les chauffe-eau à gaz : veilleuse défectueuse, problèmes d'allumage, entartrage, remplacement de pièces.</p>
+    </div>
+    
+    <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-primary">
+      <div className="flex items-center mb-4">
+        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+          <BsThermometerHigh className="text-primary text-xl" />
+        </div>
+        <h3 className="text-xl font-bold text-gray-800">Chauffe-eau thermodynamique</h3>
+      </div>
+      <p className="text-gray-700">Maintenance et réparation de chauffe-eau thermodynamiques : problèmes de pompe à chaleur, circuit frigorifique, régulation.</p>
+    </div>
+    
+    <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-primary">
+      <div className="flex items-center mb-4">
+        <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+          <GiWaterTank className="text-primary text-xl" />
+        </div>
+        <h3 className="text-xl font-bold text-gray-800">Chauffe-eau instantané</h3>
+      </div>
+      <p className="text-gray-700">Réparation de chauffe-eau instantanés : problèmes de débit, entartrage, remplacement d'échangeur thermique.</p>
+    </div>
+  </div>
+</div>
+
+<div className="my-16 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-8 shadow-md">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Pourquoi nous choisir ?</h2>
+
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div className="bg-white p-6 rounded-lg shadow-sm">
+      <div className="flex items-center mb-4">
+        <FaClock className="text-primary text-xl mr-3" />
+        <h3 className="font-bold text-gray-800">Intervention rapide</h3>
+      </div>
+      <p className="text-gray-600">Nos techniciens interviennent en moins de {props.response_time} pour rétablir votre confort.</p>
+    </div>
+    
+    <div className="bg-white p-6 rounded-lg shadow-sm">
+      <div className="flex items-center mb-4">
+        <FaUserTie className="text-primary text-xl mr-3" />
+        <h3 className="font-bold text-gray-800">Techniciens certifiés</h3>
+      </div>
+      <p className="text-gray-600">Nos plombiers chauffagistes sont formés et qualifiés pour intervenir sur tous types de chauffe-eau.</p>
+    </div>
+    
+    <div className="bg-white p-6 rounded-lg shadow-sm">
+      <div className="flex items-center mb-4">
+        <FaMoneyBillWave className="text-primary text-xl mr-3" />
+        <h3 className="font-bold text-gray-800">Tarifs transparents</h3>
+      </div>
+      <p className="text-gray-600">Devis gratuit et prix fixe sans surprise, communiqué avant toute intervention.</p>
+    </div>
+  </div>
+</div>
+
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Témoignages de nos clients</h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <Testimonial 
+      name="Thomas D."
+      location={props.ville}
+      quote="Intervention rapide et efficace. Mon chauffe-eau a été réparé en moins d'une heure. Je recommande vivement !"
+      rating={5}
+    />
+    
+    <Testimonial 
+      name="Sophie M."
+      location={props.ville}
+      quote="Technicien très professionnel qui m'a expliqué clairement le problème de mon chauffe-eau. Réparation impeccable et propre."
+      rating={5}
+    />
+  </div>
+</div>
 
 {props.ville === 'Lyon' && (
-  <>
-    ## Dépannage chauffe-eau Lyon
-
-    Notre expertise lyonnaise :
-    - Intervention dans tous les arrondissements
-    - Service express centre-ville
-    - Spécialistes multi-marques
-    - Stock de pièces disponible
-  </>
+  <div className="bg-blue-50 rounded-xl p-8 my-16 shadow-md">
+    <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Service réparation chauffe-eau à Lyon</h2>
+    <div className="mb-6 text-center text-gray-700">Notre équipe intervient dans tous les arrondissements de Lyon pour la réparation de votre chauffe-eau.</div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="bg-white p-5 rounded-lg shadow-sm">
+        <h3 className="font-bold text-lg text-primary mb-2">Lyon Centre et Presqu'île</h3>
+        <p className="text-gray-700">Intervention rapide dans les 1er, 2ème et 4ème arrondissements pour tout problème de chauffe-eau.</p>
+      </div>
+      <div className="bg-white p-5 rounded-lg shadow-sm">
+        <h3 className="font-bold text-lg text-primary mb-2">Lyon Est</h3>
+        <p className="text-gray-700">Nos techniciens couvrent les 3ème, 6ème et 8ème arrondissements pour vos pannes de chauffe-eau.</p>
+      </div>
+      <div className="bg-white p-5 rounded-lg shadow-sm">
+        <h3 className="font-bold text-lg text-primary mb-2">Lyon Ouest</h3>
+        <p className="text-gray-700">Service de dépannage disponible dans les 5ème et 9ème arrondissements.</p>
+      </div>
+      <div className="bg-white p-5 rounded-lg shadow-sm">
+        <h3 className="font-bold text-lg text-primary mb-2">Lyon Sud</h3>
+        <p className="text-gray-700">Équipe mobile intervenant dans le 7ème arrondissement et ses environs.</p>
+      </div>
+    </div>
+  </div>
 )}
 
 {props.ville === 'Villeurbanne' && (
-  <>
-    ## Réparation chauffe-eau Villeurbanne
-
-    Notre service local :
-    - Intervention rapide Gratte-Ciel/Charpennes
-    - Expertise immeubles collectifs
-    - Stock de chauffe-eau disponible
-    - Solutions adaptées à votre installation
-  </>
+  <div className="bg-blue-50 rounded-xl p-8 my-16 shadow-md">
+    <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Service réparation chauffe-eau à Villeurbanne</h2>
+    <div className="mb-6 text-center text-gray-700">Notre expertise locale à Villeurbanne nous permet d'intervenir rapidement dans tous les quartiers.</div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="bg-white p-5 rounded-lg shadow-sm">
+        <h3 className="font-bold text-lg text-primary mb-2">Gratte-Ciel et Centre</h3>
+        <p className="text-gray-700">Intervention rapide pour tout problème de chauffe-eau dans le centre de Villeurbanne.</p>
+      </div>
+      <div className="bg-white p-5 rounded-lg shadow-sm">
+        <h3 className="font-bold text-lg text-primary mb-2">Tonkin et Charpennes</h3>
+        <p className="text-gray-700">Nos techniciens sont disponibles pour les dépannages de chauffe-eau dans ces quartiers.</p>
+      </div>
+      <div className="bg-white p-5 rounded-lg shadow-sm">
+        <h3 className="font-bold text-lg text-primary mb-2">Croix-Luizet et Cusset</h3>
+        <p className="text-gray-700">Service de réparation de chauffe-eau couvrant ces zones résidentielles.</p>
+      </div>
+      <div className="bg-white p-5 rounded-lg shadow-sm">
+        <h3 className="font-bold text-lg text-primary mb-2">Flachet et Buers</h3>
+        <p className="text-gray-700">Équipe mobile intervenant rapidement dans ces quartiers de Villeurbanne.</p>
+      </div>
+    </div>
+  </div>
 )}
-
-{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
-  <>
-    ## Service chauffe-eau à {props.ville}
-
-    Nos engagements :
-    - Intervention sous {props.response_time}
-    - Techniciens qualifiés
-    - Devis transparent
-    - Service après-vente garanti
-  </>
-)}
-
-## Types de chauffe-eau traités
-
-- Chauffe-eau électrique
-- Chauffe-eau gaz
-- Chauffe-eau thermodynamique
-- Chauffe-eau solaire
-- Cumulus
-- Ballon d'eau chaude
-- Chauffe-eau instantané
-
-## Pannes courantes
-
-- Absence d'eau chaude
-- Eau pas assez chaude
-- Pression insuffisante
-- Fuite du ballon
-- Bruit anormal
-- Voyant d'erreur allumé
-- Thermostat défectueux
-
-## Pourquoi faire appel à nous ?
-
-1. **Réactivité** : Intervention sous {props.response_time}
-2. **Expertise** : Techniciens certifiés toutes marques
-3. **Stock** : Pièces détachées disponibles
-4. **Garantie** : Interventions et pièces garanties
-5. **Conseil** : Recommandations personnalisées

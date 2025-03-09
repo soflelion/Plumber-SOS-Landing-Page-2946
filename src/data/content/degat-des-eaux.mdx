@@ -1,84 +1,263 @@
+import { HeroAnimation, ResponseTimeIndicator, ServiceCard, EmergencyCallToAction, Guarantees, Testimonial } from '../../components/WaterLeakComponents';
+import { FaWater, FaSearch, FaTools, FaShieldAlt, FaFileAlt, FaHome, FaFan } from 'react-icons/fa';
+
 export const props = ['ville', 'response_time', 'service'];
 
-# {props.service} à {props.ville}
+<HeroAnimation />
 
-Dégât des eaux à {props.ville} ? Notre équipe intervient en urgence sous {props.response_time} pour limiter les dommages et résoudre rapidement votre problème.
+<div className="mb-12 mt-8">
+  <h1 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">Dégât des eaux à {props.ville}</h1>
 
-## Notre service dégât des eaux
+  <div className="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-8">
+    Inondation, fuite ou infiltration ? Notre équipe intervient en urgence sous {props.response_time} pour limiter les dommages et résoudre votre problème.
+  </div>
 
-- Intervention d'urgence immédiate
-- Détection de l'origine de la fuite
-- Solutions rapides et efficaces
-- Assistance administrative
+  <ResponseTimeIndicator time={props.response_time} />
+</div>
 
-{props.ville === 'Lyon' && (
-  <>
-    ## Intervention dégât des eaux Lyon
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-16">
+  <ServiceCard 
+    icon={FaWater} 
+    title="Intervention d'urgence" 
+    description="Équipe mobilisable immédiatement pour limiter les dégâts"
+  />
+  <ServiceCard 
+    icon={FaSearch} 
+    title="Détection de fuite" 
+    description="Localisation précise de l'origine du dégât des eaux"
+  />
+  <ServiceCard 
+    icon={FaTools} 
+    title="Réparation rapide" 
+    description="Solutions efficaces pour résoudre la cause du problème"
+  />
+  <ServiceCard 
+    icon={FaFileAlt} 
+    title="Assistance administrative" 
+    description="Aide pour les démarches auprès de votre assurance"
+  />
+</div>
 
-    Notre expertise lyonnaise :
-    - Couverture tous arrondissements
-    - Équipe mobilisable 24h/24
-    - Partenariat assurances
-    - Spécialistes bâtiments anciens
-  </>
-)}
+<EmergencyCallToAction />
 
-{props.ville === 'Villeurbanne' && (
-  <>
-    ## Service dégât des eaux Villeurbanne
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Nos garanties</h2>
+  <Guarantees />
+</div>
 
-    Notre service local :
-    - Intervention express tous secteurs
-    - Expertise immeubles collectifs
-    - Équipement dernière génération
-    - Solutions durables garanties
-  </>
-)}
+<div className="bg-blue-50 rounded-xl p-8 my-16 shadow-md">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Notre service à {props.ville}</h2>
+  <div className="mb-6 text-center text-gray-700">Notre équipe d'experts intervient dans tous les quartiers de {props.ville} pour traiter vos dégâts des eaux.</div>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="bg-white rounded-lg p-4 shadow-sm flex items-start">
+      <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 mt-1">1</span>
+      <div>
+        <h3 className="font-semibold mb-2">Intervention rapide</h3>
+        <div className="text-sm text-gray-600">Sous {props.response_time} garantie</div>
+      </div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm flex items-start">
+      <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 mt-1">2</span>
+      <div>
+        <h3 className="font-semibold mb-2">Techniciens qualifiés</h3>
+        <div className="text-sm text-gray-600">Experts en dégâts des eaux</div>
+      </div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm flex items-start">
+      <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 mt-1">3</span>
+      <div>
+        <h3 className="font-semibold mb-2">Équipement professionnel</h3>
+        <div className="text-sm text-gray-600">Matériel de pointe pour pompage et assèchement</div>
+      </div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm flex items-start">
+      <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 mt-1">4</span>
+      <div>
+        <h3 className="font-semibold mb-2">Suivi complet</h3>
+        <div className="text-sm text-gray-600">Accompagnement jusqu'à résolution totale</div>
+      </div>
+    </div>
+  </div>
+</div>
 
-{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
-  <>
-    ## Intervention dégât des eaux à {props.ville}
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Nos prestations d'urgence</h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="h-48 bg-gradient-to-r from-blue-500 to-blue-600 flex items-center justify-center">
+        <FaWater className="text-white text-5xl" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-3">Pompage d'eau</h3>
+        <div className="text-gray-700">
+          Évacuation rapide de l'eau avec des pompes professionnelles pour limiter les dommages sur votre propriété.
+        </div>
+      </div>
+    </div>
+    
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="h-48 bg-gradient-to-r from-blue-600 to-blue-700 flex items-center justify-center">
+        <FaFan className="text-white text-5xl" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-3">Assèchement</h3>
+        <div className="text-gray-700">
+          Utilisation de déshumidificateurs et d'équipements spécialisés pour sécher complètement les zones touchées.
+        </div>
+      </div>
+    </div>
+    
+    <div className="bg-white rounded-lg shadow-md overflow-hidden">
+      <div className="h-48 bg-gradient-to-r from-blue-700 to-blue-800 flex items-center justify-center">
+        <FaHome className="text-white text-5xl" />
+      </div>
+      <div className="p-6">
+        <h3 className="text-xl font-bold mb-3">Remise en état</h3>
+        <div className="text-gray-700">
+          Réparation des dommages causés par l'eau et prévention des moisissures pour une restauration complète.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-    Notre engagement :
-    - Intervention sous {props.response_time}
-    - Équipe qualifiée locale
-    - Matériel professionnel
-    - Suivi complet du dossier
-  </>
-)}
+<div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-8 my-16 shadow-md">
+  <h2 className="text-2xl font-bold mb-6 text-gray-800 text-center">Types de dégâts traités</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Fuite de canalisation</h3>
+      <div className="text-gray-700">Détection et réparation des fuites dans les canalisations d'eau, même les plus difficiles d'accès.</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Infiltration toiture</h3>
+      <div className="text-gray-700">Traitement des infiltrations provenant de la toiture et réparation pour éviter toute récidive.</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Débordement</h3>
+      <div className="text-gray-700">Nettoyage et réparation suite aux débordements de baignoire, lavabo ou machine à laver.</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Remontées capillaires</h3>
+      <div className="text-gray-700">Solutions efficaces contre les remontées d'humidité par capillarité dans les murs.</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Infiltration façade</h3>
+      <div className="text-gray-700">Traitement des infiltrations par les murs extérieurs et solutions d'étanchéité.</div>
+    </div>
+    <div className="bg-white rounded-lg p-4 shadow-sm">
+      <h3 className="font-bold text-primary mb-3">Fuite chauffe-eau</h3>
+      <div className="text-gray-700">Réparation ou remplacement des chauffe-eau et ballons d'eau chaude défectueux.</div>
+    </div>
+  </div>
+</div>
 
-## Nos prestations d'urgence
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Assistance administrative</h2>
+  
+  <div className="bg-white rounded-xl p-8 shadow-md">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h3 className="text-xl font-bold mb-4">Notre accompagnement</h3>
+        <ul className="space-y-3">
+          <li className="flex items-start">
+            <span className="text-primary mr-2">✓</span>
+            <span>Constat détaillé du dégât des eaux</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary mr-2">✓</span>
+            <span>Documentation photographique complète</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary mr-2">✓</span>
+            <span>Rapport technique pour votre assurance</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary mr-2">✓</span>
+            <span>Devis détaillé des réparations nécessaires</span>
+          </li>
+          <li className="flex items-start">
+            <span className="text-primary mr-2">✓</span>
+            <span>Suivi du dossier avec votre assureur</span>
+          </li>
+        </ul>
+      </div>
+      <div className="bg-gradient-to-r from-primary/5 to-secondary/5 p-6 rounded-lg">
+        <h3 className="text-xl font-bold mb-4">Conseils pratiques</h3>
+        <div className="space-y-4 text-gray-700">
+          <p>En cas de dégât des eaux, prenez rapidement des photos avant toute intervention pour documenter l'étendue des dommages.</p>
+          <p>Conservez tous les documents et factures liés à l'incident pour faciliter le traitement de votre dossier d'assurance.</p>
+          <p>Notre équipe vous guide à chaque étape pour maximiser vos chances d'indemnisation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-- Détection de fuite
-- Pompage d'eau
-- Assèchement des lieux
-- Réparation de la cause
-- Protection des biens
-- Prévention moisissures
-- Remise en état
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Témoignages clients</h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <Testimonial 
+      name="Sophie D." 
+      location={`${props.ville}`} 
+      quote="Suite à une fuite importante dans ma cuisine, l'équipe est intervenue en moins de 30 minutes. Ils ont pompé l'eau, trouvé l'origine de la fuite et m'ont aidée avec les démarches d'assurance. Un service impeccable !"
+    />
+    <Testimonial 
+      name="Thomas L." 
+      location={`${props.ville}`} 
+      quote="Infiltration dans le plafond détectée un dimanche. Intervention rapide et efficace, avec un suivi administratif qui m'a fait gagner un temps précieux avec mon assurance. Je recommande vivement."
+    />
+  </div>
+</div>
 
-## Types de dégâts traités
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Pourquoi nous choisir ?</h2>
 
-- Fuite de canalisation
-- Infiltration toiture
-- Débordement baignoire/lavabo
-- Fuite machine à laver
-- Remontées capillaires
-- Infiltration façade
-- Fuite chauffe-eau
-
-## Pourquoi nous choisir ?
-
-1. **Urgence** : Intervention sous {props.response_time}
-2. **Expertise** : Techniciens qualifiés
-3. **Équipement** : Matériel professionnel
-4. **Assurance** : Aide aux démarches
-5. **Suivi** : Accompagnement complet
-
-## Assistance administrative
-
-- Constat dégât des eaux
-- Photos et rapport détaillé
-- Contact avec l'assurance
-- Devis de réparation
-- Suivi du dossier
+  <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-8 shadow-md">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">1</span>
+          <h3 className="font-semibold">Intervention rapide</h3>
+        </div>
+        <div className="text-sm text-gray-600">Présence sur site en moins de {props.response_time}</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">2</span>
+          <h3 className="font-semibold">Expertise technique</h3>
+        </div>
+        <div className="text-sm text-gray-600">Techniciens spécialisés en dégâts des eaux</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">3</span>
+          <h3 className="font-semibold">Équipement spécialisé</h3>
+        </div>
+        <div className="text-sm text-gray-600">Matériel professionnel de pompage et assèchement</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">4</span>
+          <h3 className="font-semibold">Disponibilité</h3>
+        </div>
+        <div className="text-sm text-gray-600">Service d'urgence 24h/24 et 7j/7</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">5</span>
+          <h3 className="font-semibold">Accompagnement assurance</h3>
+        </div>
+        <div className="text-sm text-gray-600">Aide complète pour vos démarches administratives</div>
+      </div>
+      <div className="bg-white rounded-lg p-4 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">6</span>
+          <h3 className="font-semibold">Satisfaction client</h3>
+        </div>
+        <div className="text-sm text-gray-600">Plus de 98% de clients satisfaits</div>
+      </div>
+    </div>
+  </div>
+</div>
