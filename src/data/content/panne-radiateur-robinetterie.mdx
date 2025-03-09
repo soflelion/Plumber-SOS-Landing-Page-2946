@@ -1,7 +1,7 @@
 import { HeroAnimation, ResponseTimeIndicator, ServiceCard, EmergencyCallToAction, Guarantees } from '../../components/WaterLeakComponents';
-import { FaTools, FaWrench, FaCheckCircle, FaClock, FaUserTie, FaMoneyBillWave, FaTint, FaThermometer } from 'react-icons/fa';
-import { GiValve } from 'react-icons/gi';
-import { MdPlumbing } from 'react-icons/md';
+import { FaTools, FaWrench, FaCheckCircle, FaClock, FaUserTie, FaMoneyBillWave, FaTint, FaThermometer, FaShieldAlt, FaPhoneAlt, FaHome } from 'react-icons/fa';
+import { GiValve, GiWaterTank } from 'react-icons/gi';
+import { MdPlumbing, MdEngineering } from 'react-icons/md';
 
 export const props = ['ville', 'response_time', 'service'];
 
@@ -9,30 +9,91 @@ export const props = ['ville', 'response_time', 'service'];
 
 <div className="mb-12 mt-8">
   <h1 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">
-    Dépannage radiateur et robinetterie
+    Dépannage radiateur et robinetterie à {props.ville}
   </h1>
 
   <div className="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-8">
-    Intervention sous {props.response_time}
+    Nos techniciens interviennent sous {props.response_time} pour tous vos problèmes de chauffage et de robinetterie.
+    Service disponible 24h/24 et 7j/7 pour les urgences.
   </div>
 
   <ResponseTimeIndicator time={props.response_time} />
 </div>
 
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 my-12">
-  <ServiceCard icon={FaTools} title="Diagnostic" description="Analyse précise" />
-  <ServiceCard icon={FaWrench} title="Réparation" description="Intervention rapide" />
-  <ServiceCard icon={MdPlumbing} title="Installation" description="Équipements neufs" />
-  <ServiceCard icon={GiValve} title="Maintenance" description="Entretien régulier" />
+  <ServiceCard icon={FaTools} title="Diagnostic expert" description="Analyse précise de vos installations" />
+  <ServiceCard icon={FaWrench} title="Réparation rapide" description="Intervention efficace et durable" />
+  <ServiceCard icon={MdPlumbing} title="Installation neuve" description="Équipements modernes aux normes" />
+  <ServiceCard icon={GiValve} title="Maintenance" description="Entretien préventif régulier" />
+</div>
+
+<div className="bg-gradient-to-r from-blue-50 to-white py-12 rounded-xl shadow-md my-16">
+  <div className="max-w-5xl mx-auto px-4">
+    <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+      Signes de problèmes nécessitant une intervention
+    </h2>
+    
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="bg-white p-4 rounded-lg shadow-md">
+        <h3 className="text-xl font-bold mb-4 flex items-center">
+          <FaThermometer className="text-primary mr-2" />
+          Problèmes de radiateurs
+        </h3>
+        <ul className="space-y-2">
+          <li className="flex items-start">
+            <FaCheckCircle className="text-primary mt-1 mr-2 flex-shrink-0" />
+            <span>Radiateur froid ou partiellement chaud</span>
+          </li>
+          <li className="flex items-start">
+            <FaCheckCircle className="text-primary mt-1 mr-2 flex-shrink-0" />
+            <span>Bruits anormaux (claquements, sifflements)</span>
+          </li>
+          <li className="flex items-start">
+            <FaCheckCircle className="text-primary mt-1 mr-2 flex-shrink-0" />
+            <span>Fuites au niveau des raccords ou du corps</span>
+          </li>
+          <li className="flex items-start">
+            <FaCheckCircle className="text-primary mt-1 mr-2 flex-shrink-0" />
+            <span>Robinet thermostatique bloqué ou défectueux</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div className="bg-white p-4 rounded-lg shadow-md">
+        <h3 className="text-xl font-bold mb-4 flex items-center">
+          <FaTint className="text-secondary mr-2" />
+          Problèmes de robinetterie
+        </h3>
+        <ul className="space-y-2">
+          <li className="flex items-start">
+            <FaCheckCircle className="text-secondary mt-1 mr-2 flex-shrink-0" />
+            <span>Goutte à goutte persistant</span>
+          </li>
+          <li className="flex items-start">
+            <FaCheckCircle className="text-secondary mt-1 mr-2 flex-shrink-0" />
+            <span>Difficulté à régler la température</span>
+          </li>
+          <li className="flex items-start">
+            <FaCheckCircle className="text-secondary mt-1 mr-2 flex-shrink-0" />
+            <span>Débit d'eau faible ou irrégulier</span>
+          </li>
+          <li className="flex items-start">
+            <FaCheckCircle className="text-secondary mt-1 mr-2 flex-shrink-0" />
+            <span>Bruit lors de l'ouverture ou fermeture</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 my-12">
   <div className="bg-white rounded-xl p-6 shadow-lg">
     <div className="flex items-center mb-4">
       <FaThermometer className="text-primary text-2xl mr-3" />
-      <h3 className="text-xl font-bold">Radiateurs</h3>
+      <h3 className="text-xl font-bold">Types de radiateurs</h3>
     </div>
-    <div className="space-y-3">
+    <div className="space-y-2">
       <div className="flex items-center p-3 bg-gray-50 rounded-lg">
         <FaCheckCircle className="text-primary mr-2" />
         <span>Radiateur fonte</span>
@@ -43,7 +104,15 @@ export const props = ['ville', 'response_time', 'service'];
       </div>
       <div className="flex items-center p-3 bg-gray-50 rounded-lg">
         <FaCheckCircle className="text-primary mr-2" />
+        <span>Radiateur aluminium</span>
+      </div>
+      <div className="flex items-center p-3 bg-gray-50 rounded-lg">
+        <FaCheckCircle className="text-primary mr-2" />
         <span>Sèche-serviette</span>
+      </div>
+      <div className="flex items-center p-3 bg-gray-50 rounded-lg">
+        <FaCheckCircle className="text-primary mr-2" />
+        <span>Plancher chauffant</span>
       </div>
     </div>
   </div>
@@ -51,9 +120,9 @@ export const props = ['ville', 'response_time', 'service'];
   <div className="bg-white rounded-xl p-6 shadow-lg">
     <div className="flex items-center mb-4">
       <FaTint className="text-secondary text-2xl mr-3" />
-      <h3 className="text-xl font-bold">Robinetterie</h3>
+      <h3 className="text-xl font-bold">Types de robinetterie</h3>
     </div>
-    <div className="space-y-3">
+    <div className="space-y-2">
       <div className="flex items-center p-3 bg-gray-50 rounded-lg">
         <FaCheckCircle className="text-secondary mr-2" />
         <span>Mitigeur cuisine</span>
@@ -66,6 +135,50 @@ export const props = ['ville', 'response_time', 'service'];
         <FaCheckCircle className="text-secondary mr-2" />
         <span>Mitigeur thermostatique</span>
       </div>
+      <div className="flex items-center p-3 bg-gray-50 rounded-lg">
+        <FaCheckCircle className="text-secondary mr-2" />
+        <span>Robinet extérieur</span>
+      </div>
+      <div className="flex items-center p-3 bg-gray-50 rounded-lg">
+        <FaCheckCircle className="text-secondary mr-2" />
+        <span>Robinet d'arrêt</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="bg-white rounded-xl shadow-lg p-8 my-12 max-w-6xl mx-auto">
+  <h2 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+    Nos prestations de dépannage
+  </h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div>
+      <h3 className="text-xl font-bold mb-4 flex items-center">
+        <FaThermometer className="text-primary mr-2" />
+        Services radiateurs
+      </h3>
+      <ul className="space-y-2">
+        <li className="bg-gray-50 p-3 rounded-lg">Purge professionnelle</li>
+        <li className="bg-gray-50 p-3 rounded-lg">Réparation de fuites</li>
+        <li className="bg-gray-50 p-3 rounded-lg">Remplacement de robinets thermostatiques</li>
+        <li className="bg-gray-50 p-3 rounded-lg">Désembouage circuit de chauffage</li>
+        <li className="bg-gray-50 p-3 rounded-lg">Équilibrage installation</li>
+      </ul>
+    </div>
+    
+    <div>
+      <h3 className="text-xl font-bold mb-4 flex items-center">
+        <FaTint className="text-secondary mr-2" />
+        Services robinetterie
+      </h3>
+      <ul className="space-y-2">
+        <li className="bg-gray-50 p-3 rounded-lg">Réparation mitigeur</li>
+        <li className="bg-gray-50 p-3 rounded-lg">Changement de joints</li>
+        <li className="bg-gray-50 p-3 rounded-lg">Détartrage robinetterie</li>
+        <li className="bg-gray-50 p-3 rounded-lg">Installation robinets neufs</li>
+        <li className="bg-gray-50 p-3 rounded-lg">Maintenance préventive</li>
+      </ul>
     </div>
   </div>
 </div>
@@ -76,7 +189,7 @@ export const props = ['ville', 'response_time', 'service'];
       <FaClock className="text-primary text-xl" />
     </div>
     <h3 className="text-lg font-bold text-gray-800 mb-2">Intervention rapide</h3>
-    <div className="text-gray-600">Disponibles 24/7</div>
+    <div className="text-gray-600">Disponibles 24h/24 et 7j/7 pour les urgences à {props.ville}</div>
   </div>
 
   <div className="bg-white rounded-xl p-6 shadow-lg text-center">
@@ -84,7 +197,7 @@ export const props = ['ville', 'response_time', 'service'];
       <FaUserTie className="text-primary text-xl" />
     </div>
     <h3 className="text-lg font-bold text-gray-800 mb-2">Expertise certifiée</h3>
-    <div className="text-gray-600">Techniciens qualifiés</div>
+    <div className="text-gray-600">Techniciens qualifiés et expérimentés</div>
   </div>
 
   <div className="bg-white rounded-xl p-6 shadow-lg text-center">
@@ -92,7 +205,55 @@ export const props = ['ville', 'response_time', 'service'];
       <FaMoneyBillWave className="text-primary text-xl" />
     </div>
     <h3 className="text-lg font-bold text-gray-800 mb-2">Prix transparent</h3>
-    <div className="text-gray-600">Devis gratuit</div>
+    <div className="text-gray-600">Devis gratuit avant intervention</div>
+  </div>
+</div>
+
+<div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-8 my-12 max-w-6xl mx-auto">
+  <h2 className="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+    Pourquoi faire appel à nos services à {props.ville}
+  </h2>
+  
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="bg-white p-4 rounded-lg shadow-md">
+      <div className="flex items-center mb-3">
+        <FaPhoneAlt className="text-primary mr-2" />
+        <h3 className="font-bold">Disponibilité</h3>
+      </div>
+      <p className="text-gray-700">
+        Notre équipe est disponible 7j/7 pour répondre à vos urgences de plomberie et chauffage à {props.ville}.
+      </p>
+    </div>
+    
+    <div className="bg-white p-4 rounded-lg shadow-md">
+      <div className="flex items-center mb-3">
+        <MdEngineering className="text-primary mr-2" />
+        <h3 className="font-bold">Techniciens qualifiés</h3>
+      </div>
+      <p className="text-gray-700">
+        Nos plombiers chauffagistes sont formés et certifiés pour intervenir sur tous types d'équipements.
+      </p>
+    </div>
+    
+    <div className="bg-white p-4 rounded-lg shadow-md">
+      <div className="flex items-center mb-3">
+        <FaHome className="text-primary mr-2" />
+        <h3 className="font-bold">Service local</h3>
+      </div>
+      <p className="text-gray-700">
+        Entreprise basée localement, nous connaissons parfaitement les spécificités des installations à {props.ville}.
+      </p>
+    </div>
+    
+    <div className="bg-white p-4 rounded-lg shadow-md">
+      <div className="flex items-center mb-3">
+        <FaShieldAlt className="text-primary mr-2" />
+        <h3 className="font-bold">Garantie intervention</h3>
+      </div>
+      <p className="text-gray-700">
+        Toutes nos interventions sont garanties pour vous assurer tranquillité et satisfaction.
+      </p>
+    </div>
   </div>
 </div>
 
