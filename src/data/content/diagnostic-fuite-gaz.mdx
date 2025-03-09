@@ -1,0 +1,84 @@
+export const props = ['ville', 'response_time', 'service'];
+
+# {props.service} à {props.ville}
+
+Suspicion de fuite de gaz à {props.ville} ? Nos techniciens certifiés interviennent sous {props.response_time} pour un diagnostic professionnel et sécurisé.
+
+## Notre service diagnostic gaz
+
+- Détection professionnelle
+- Rapport détaillé
+- Certificat de conformité
+- Conseils de sécurité
+
+{props.ville === 'Lyon' && (
+  <>
+    ## Diagnostic gaz Lyon
+
+    Notre expertise lyonnaise :
+    - Intervention tous arrondissements
+    - Techniciens certifiés QUALIGAZ
+    - Connaissance réseau local
+    - Partenaire fournisseurs gaz
+  </>
+)}
+
+{props.ville === 'Villeurbanne' && (
+  <>
+    ## Service diagnostic gaz Villeurbanne
+
+    Notre service local :
+    - Intervention express tous quartiers
+    - Spécialistes installations collectives
+    - Équipement dernière génération
+    - Expertise reconnue
+  </>
+)}
+
+{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
+  <>
+    ## Diagnostic gaz à {props.ville}
+
+    Notre engagement :
+    - Intervention sous {props.response_time}
+    - Techniciens habilités
+    - Matériel professionnel
+    - Rapport complet
+  </>
+)}
+
+## Notre processus de diagnostic
+
+1. **Inspection visuelle** : Vérification installations
+2. **Test étanchéité** : Mesures précises
+3. **Détection fuites** : Équipement spécialisé
+4. **Analyse risques** : Évaluation complète
+5. **Rapport détaillé** : Documentation exhaustive
+
+## Points de contrôle
+
+- Raccordements gaz
+- Tuyauterie apparente
+- Ventilation locaux
+- Appareils gaz
+- Robinets de commande
+- Flexibles de raccordement
+- Étanchéité générale
+
+## Équipements contrôlés
+
+- Chaudières gaz
+- Cuisinières
+- Chauffe-eau gaz
+- Radiateurs gaz
+- Installations collectives
+- Compteurs gaz
+- Vannes de sécurité
+
+## Pourquoi nous choisir ?
+
+1. **Certification** : Techniciens agréés
+2. **Rapidité** : Intervention sous {props.response_time}
+3. **Précision** : Matériel haute technologie
+4. **Sécurité** : Protocoles stricts
+5. **Documentation** : Rapport complet fourni

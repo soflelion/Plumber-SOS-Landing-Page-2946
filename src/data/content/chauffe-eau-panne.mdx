@@ -1,0 +1,76 @@
+export const props = ['ville', 'response_time', 'service'];
+
+# {props.service} à {props.ville}
+
+Votre chauffe-eau est en panne à {props.ville} ? Nos plombiers chauffagistes interviennent en moins de {props.response_time} pour diagnostiquer et réparer votre chauffe-eau.
+
+## Notre service chauffe-eau
+
+- Diagnostic rapide et précis
+- Réparation toutes marques
+- Installation de chauffe-eau neuf
+- Maintenance préventive
+
+{props.ville === 'Lyon' && (
+  <>
+    ## Dépannage chauffe-eau Lyon
+
+    Notre expertise lyonnaise :
+    - Intervention dans tous les arrondissements
+    - Service express centre-ville
+    - Spécialistes multi-marques
+    - Stock de pièces disponible
+  </>
+)}
+
+{props.ville === 'Villeurbanne' && (
+  <>
+    ## Réparation chauffe-eau Villeurbanne
+
+    Notre service local :
+    - Intervention rapide Gratte-Ciel/Charpennes
+    - Expertise immeubles collectifs
+    - Stock de chauffe-eau disponible
+    - Solutions adaptées à votre installation
+  </>
+)}
+
+{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
+  <>
+    ## Service chauffe-eau à {props.ville}
+
+    Nos engagements :
+    - Intervention sous {props.response_time}
+    - Techniciens qualifiés
+    - Devis transparent
+    - Service après-vente garanti
+  </>
+)}
+
+## Types de chauffe-eau traités
+
+- Chauffe-eau électrique
+- Chauffe-eau gaz
+- Chauffe-eau thermodynamique
+- Chauffe-eau solaire
+- Cumulus
+- Ballon d'eau chaude
+- Chauffe-eau instantané
+
+## Pannes courantes
+
+- Absence d'eau chaude
+- Eau pas assez chaude
+- Pression insuffisante
+- Fuite du ballon
+- Bruit anormal
+- Voyant d'erreur allumé
+- Thermostat défectueux
+
+## Pourquoi faire appel à nous ?
+
+1. **Réactivité** : Intervention sous {props.response_time}
+2. **Expertise** : Techniciens certifiés toutes marques
+3. **Stock** : Pièces détachées disponibles
+4. **Garantie** : Interventions et pièces garanties
+5. **Conseil** : Recommandations personnalisées

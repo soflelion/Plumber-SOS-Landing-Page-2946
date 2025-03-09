@@ -1,0 +1,87 @@
+export const props = ['ville', 'response_time', 'service'];
+
+# {props.service} à {props.ville}
+
+Fuite sur votre cumulus à {props.ville} ? Nos plombiers interviennent en urgence sous {props.response_time} pour réparer ou remplacer votre chauffe-eau.
+
+## Notre service cumulus
+
+- Diagnostic rapide
+- Réparation toutes marques
+- Remplacement si nécessaire
+- Installation aux normes
+
+{props.ville === 'Lyon' && (
+  <>
+    ## Réparation cumulus Lyon
+
+    Notre expertise lyonnaise :
+    - Intervention tous arrondissements
+    - Stock de cumulus disponible
+    - Installation jour même
+    - Spécialistes multi-marques
+  </>
+)}
+
+{props.ville === 'Villeurbanne' && (
+  <>
+    ## Service cumulus Villeurbanne
+
+    Notre service local :
+    - Intervention express tous quartiers
+    - Expertise immeubles collectifs
+    - Remplacement rapide
+    - Solutions adaptées
+  </>
+)}
+
+{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
+  <>
+    ## Dépannage cumulus à {props.ville}
+
+    Notre engagement :
+    - Intervention sous {props.response_time}
+    - Techniciens qualifiés
+    - Stock permanent
+    - Installation garantie
+  </>
+)}
+
+## Types d'interventions
+
+- Réparation fuite
+- Remplacement résistance
+- Changement thermostat
+- Remplacement complet
+- Détartrage
+- Maintenance préventive
+- Mise aux normes
+
+## Marques traitées
+
+- Atlantic
+- Thermor
+- Sauter
+- De Dietrich
+- Chaffoteaux
+- Ariston
+- Pacific
+- Equation
+
+## Causes fréquentes
+
+- Joint usé
+- Corrosion
+- Pression excessive
+- Calcaire
+- Thermostat défectueux
+- Résistance percée
+- Raccords défectueux
+
+## Pourquoi nous choisir ?
+
+1. **Urgence** : Intervention sous {props.response_time}
+2. **Stock** : Cumulus disponibles
+3. **Expertise** : Techniciens certifiés
+4. **Garantie** : Pièces et main d'œuvre
+5. **Prix** : Devis gratuit et transparent

@@ -1,0 +1,84 @@
+export const props = ['ville', 'response_time', 'service'];
+
+# {props.service} à {props.ville}
+
+Radiateurs froids ou chauffage inefficace à {props.ville} ? Nos techniciens interviennent sous {props.response_time} pour un désembuage professionnel de vos radiateurs.
+
+## Notre service désembuage
+
+- Diagnostic thermique complet
+- Désembuage haute pression
+- Traitement anticorrosion
+- Optimisation du chauffage
+
+{props.ville === 'Lyon' && (
+  <>
+    ## Désembuage radiateur Lyon
+
+    Notre expertise lyonnaise :
+    - Intervention tous arrondissements
+    - Spécialistes chauffage central
+    - Solutions adaptées immeubles anciens
+    - Équipement professionnel
+  </>
+)}
+
+{props.ville === 'Villeurbanne' && (
+  <>
+    ## Service désembuage Villeurbanne
+
+    Notre service local :
+    - Intervention rapide tous quartiers
+    - Expertise habitat collectif
+    - Techniciens spécialisés
+    - Matériel dernière génération
+  </>
+)}
+
+{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
+  <>
+    ## Désembuage radiateurs à {props.ville}
+
+    Notre engagement :
+    - Intervention sous {props.response_time}
+    - Techniciens qualifiés
+    - Solutions personnalisées
+    - Résultats garantis
+  </>
+)}
+
+## Avantages du désembuage
+
+- Meilleur rendement chauffage
+- Économies d'énergie
+- Confort thermique optimal
+- Durée de vie prolongée
+- Réduction des pannes
+- Silence de fonctionnement
+- Protection installation
+
+## Notre procédé
+
+1. **Diagnostic** : Analyse complète du système
+2. **Désembuage** : Nettoyage haute pression
+3. **Rinçage** : Élimination des boues
+4. **Protection** : Traitement anticorrosion
+5. **Contrôle** : Vérification des performances
+
+## Types d'installations traitées
+
+- Radiateurs fonte
+- Radiateurs acier
+- Plancher chauffant
+- Chauffage collectif
+- Installation individuelle
+- Circuits industriels
+- Réseaux tertiaires
+
+## Pourquoi nous choisir ?
+
+1. **Expertise** : Techniciens spécialisés
+2. **Rapidité** : Intervention sous {props.response_time}
+3. **Équipement** : Matériel professionnel
+4. **Garantie** : Résultats mesurables
+5. **Économies** : Jusqu'à 40% sur votre chauffage

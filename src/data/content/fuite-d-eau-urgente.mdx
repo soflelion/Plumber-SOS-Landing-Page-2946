@@ -1,0 +1,236 @@
+import { HeroAnimation, ResponseTimeIndicator, ServiceCard, EmergencyCallToAction, Guarantees, Testimonial, CityDistricts, LeakTypeGrid } from '../../components/WaterLeakComponents';
+import { FaWrench, FaTint, FaSearch, FaTools } from 'react-icons/fa';
+
+export const props = ['ville', 'response_time', 'service'];
+
+<HeroAnimation />
+
+<div className="mb-12 mt-8">
+  <h1 className="text-3xl md:text-4xl font-bold text-center bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">Experts en réparation de fuites d'eau à {props.ville}</h1>
+
+  <p className="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-8">
+    Notre équipe de plombiers professionnels intervient pour toute fuite d'eau à {props.ville} en moins de {props.response_time}.
+  </p>
+
+  <ResponseTimeIndicator time={props.response_time} />
+</div>
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-16">
+  <ServiceCard 
+    icon={FaTint} 
+    title="Détection de fuite" 
+    description="Localisation précise des fuites même les plus difficiles à détecter"
+  />
+  <ServiceCard 
+    icon={FaWrench} 
+    title="Réparation immédiate" 
+    description="Intervention rapide pour stopper la fuite et réparer définitivement"
+  />
+  <ServiceCard 
+    icon={FaSearch} 
+    title="Diagnostic complet" 
+    description="Analyse approfondie de votre installation pour prévenir les récidives"
+  />
+  <ServiceCard 
+    icon={FaTools} 
+    title="Remplacement si nécessaire" 
+    description="Installation de nouvelles pièces ou canalisations si besoin"
+  />
+</div>
+
+<EmergencyCallToAction />
+
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Nos garanties</h2>
+  <Guarantees />
+</div>
+
+{props.ville === 'Lyon' && (
+  <>
+    <div className="my-16">
+      <CityDistricts 
+        city="Lyon"
+        districts={[
+          { name: "Lyon 1er - Terreaux", info: "Intervention en 15-20 min" },
+          { name: "Lyon 2e - Bellecour", info: "Équipe dédiée 24h/24" },
+          { name: "Lyon 3e - Part-Dieu", info: "Techniciens spécialisés" },
+          { name: "Lyon 4e - Croix-Rousse", info: "Service d'urgence permanent" },
+          { name: "Lyon 5e - Vieux Lyon", info: "Expertise bâtiments anciens" },
+          { name: "Lyon 6e - Brotteaux", info: "Intervention rapide" },
+          { name: "Lyon 7e - Guillotière", info: "Équipe locale disponible" },
+          { name: "Lyon 8e - Monplaisir", info: "Techniciens expérimentés" },
+          { name: "Lyon 9e - Vaise", info: "Service 7j/7" }
+        ]}
+      />
+    </div>
+    
+    <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-8 my-16 shadow-md">
+      <h3 className="text-2xl font-bold mb-6 text-gray-800 text-center">Notre expertise à Lyon</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="bg-white rounded-lg p-6 shadow-sm">
+          <h4 className="font-bold text-primary mb-3">Bâtiments historiques</h4>
+          <p className="text-gray-700">Notre équipe possède une expertise particulière pour les interventions dans les bâtiments historiques du Vieux Lyon et de la Croix-Rousse, avec des techniques adaptées aux canalisations anciennes.</p>
+        </div>
+        <div className="bg-white rounded-lg p-6 shadow-sm">
+          <h4 className="font-bold text-primary mb-3">Immeubles haussmanniens</h4>
+          <p className="text-gray-700">Spécialistes des fuites dans les immeubles haussmanniens des Brotteaux et de Bellecour, nous intervenons avec précision pour préserver ces bâtiments de caractère.</p>
+        </div>
+        <div className="bg-white rounded-lg p-6 shadow-sm">
+          <h4 className="font-bold text-primary mb-3">Constructions modernes</h4>
+          <p className="text-gray-700">Pour les immeubles récents de la Part-Dieu et Confluence, nous utilisons les dernières technologies de détection et réparation non-invasive.</p>
+        </div>
+        <div className="bg-white rounded-lg p-6 shadow-sm">
+          <h4 className="font-bold text-primary mb-3">Statistiques</h4>
+          <p className="text-gray-700">Plus de 1500 interventions réussies à Lyon en 2024, avec un taux de satisfaction client de 98% et un temps d'intervention moyen de 22 minutes.</p>
+        </div>
+      </div>
+    </div>
+  </>
+)}
+
+{props.ville === 'Villeurbanne' && (
+  <div className="bg-blue-50 rounded-xl p-8 my-16 shadow-md">
+    <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Service plomberie à Villeurbanne</h2>
+    <p className="mb-6 text-center text-gray-700">Notre expertise locale à Villeurbanne nous permet d'intervenir rapidement dans tous les quartiers.</p>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="bg-white rounded-lg p-5 shadow-sm">
+        <h3 className="font-semibold mb-3">Gratte-Ciel / Charpennes</h3>
+        <p className="text-sm text-gray-600">Intervention express en moins de {props.response_time}</p>
+      </div>
+      <div className="bg-white rounded-lg p-5 shadow-sm">
+        <h3 className="font-semibold mb-3">Tonkin / Croix-Luizet</h3>
+        <p className="text-sm text-gray-600">Équipe dédiée pour interventions rapides</p>
+      </div>
+      <div className="bg-white rounded-lg p-5 shadow-sm">
+        <h3 className="font-semibold mb-3">Cusset / Bonnevay</h3>
+        <p className="text-sm text-gray-600">Plombiers disponibles 7j/7</p>
+      </div>
+      <div className="bg-white rounded-lg p-5 shadow-sm">
+        <h3 className="font-semibold mb-3">Flachet / Buers</h3>
+        <p className="text-sm text-gray-600">Service d'urgence permanent</p>
+      </div>
+    </div>
+  </div>
+)}
+
+{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
+  <div className="bg-blue-50 rounded-xl p-8 my-16 shadow-md">
+    <h2 className="text-2xl md:text-3xl font-bold text-center mb-6">Notre service local à {props.ville}</h2>
+    <p className="mb-6 text-center text-gray-700">Nos engagements pour {props.ville} :</p>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="bg-white rounded-lg p-5 shadow-sm flex items-start">
+        <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 mt-1">1</span>
+        <div>
+          <h3 className="font-semibold mb-2">Intervention rapide</h3>
+          <p className="text-sm text-gray-600">Sous {props.response_time} garantie</p>
+        </div>
+      </div>
+      <div className="bg-white rounded-lg p-5 shadow-sm flex items-start">
+        <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 mt-1">2</span>
+        <div>
+          <h3 className="font-semibold mb-2">Plombiers qualifiés</h3>
+          <p className="text-sm text-gray-600">Experts en fuites d'eau</p>
+        </div>
+      </div>
+      <div className="bg-white rounded-lg p-5 shadow-sm flex items-start">
+        <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 mt-1">3</span>
+        <div>
+          <h3 className="font-semibold mb-2">Service d'urgence</h3>
+          <p className="text-sm text-gray-600">Disponible 24h/24</p>
+        </div>
+      </div>
+      <div className="bg-white rounded-lg p-5 shadow-sm flex items-start">
+        <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4 mt-1">4</span>
+        <div>
+          <h3 className="font-semibold mb-2">Tarification claire</h3>
+          <p className="text-sm text-gray-600">Devis gratuit avant travaux</p>
+        </div>
+      </div>
+    </div>
+  </div>
+)}
+
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Types de fuites traitées</h2>
+
+  <LeakTypeGrid 
+    types={[
+      "Robinet et mitigeur",
+      "Chasse d'eau",
+      "Canalisation",
+      "Sous évier",
+      "Baignoire/douche",
+      "Machine à laver",
+      "Cumulus",
+      "Chauffe-eau"
+    ]}
+  />
+</div>
+
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Témoignages de clients satisfaits</h2>
+
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+    <Testimonial 
+      name="Thomas D." 
+      location={`${props.ville}`} 
+      quote="Intervention rapide et efficace. Fuite sous évier réparée en moins de 30 minutes. Je recommande !"
+    />
+    <Testimonial 
+      name="Sophie M." 
+      location={`${props.ville}`} 
+      quote="Très professionnels. Ils ont détecté une fuite cachée que d'autres plombiers n'avaient pas trouvée."
+    />
+  </div>
+</div>
+
+<div className="my-16">
+  <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Pourquoi nous choisir ?</h2>
+
+  <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-xl p-8 shadow-md">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="bg-white rounded-lg p-5 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">1</span>
+          <h3 className="font-semibold">Rapidité d'intervention</h3>
+        </div>
+        <p className="text-sm text-gray-600">Présence sur site en moins de {props.response_time}</p>
+      </div>
+      <div className="bg-white rounded-lg p-5 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">2</span>
+          <h3 className="font-semibold">Expertise reconnue</h3>
+        </div>
+        <p className="text-sm text-gray-600">Plombiers certifiés et expérimentés</p>
+      </div>
+      <div className="bg-white rounded-lg p-5 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">3</span>
+          <h3 className="font-semibold">Prix transparents</h3>
+        </div>
+        <p className="text-sm text-gray-600">Devis gratuit avant intervention</p>
+      </div>
+      <div className="bg-white rounded-lg p-5 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">4</span>
+          <h3 className="font-semibold">Disponibilité</h3>
+        </div>
+        <p className="text-sm text-gray-600">Service d'urgence 24h/24 et 7j/7</p>
+      </div>
+      <div className="bg-white rounded-lg p-5 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">5</span>
+          <h3 className="font-semibold">Garantie</h3>
+        </div>
+        <p className="text-sm text-gray-600">Toutes nos réparations sont garanties</p>
+      </div>
+      <div className="bg-white rounded-lg p-5 shadow-sm">
+        <div className="flex items-center mb-4">
+          <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center mr-4">6</span>
+          <h3 className="font-semibold">Satisfaction client</h3>
+        </div>
+        <p className="text-sm text-gray-600">Plus de 98% de clients satisfaits</p>
+      </div>
+    </div>
+  </div>
+</div>

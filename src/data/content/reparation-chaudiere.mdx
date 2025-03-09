@@ -1,0 +1,87 @@
+export const props = ['ville', 'response_time', 'service'];
+
+# {props.service} à {props.ville}
+
+Votre chaudière est en panne à {props.ville} ? Nos chauffagistes experts interviennent sous {props.response_time} pour un dépannage rapide et efficace.
+
+## Notre service dépannage chaudière
+
+- Diagnostic professionnel immédiat
+- Réparation toutes marques
+- Pièces d'origine disponibles
+- Garantie intervention
+
+{props.ville === 'Lyon' && (
+  <>
+    ## Dépannage chaudière Lyon
+
+    Notre expertise lyonnaise :
+    - Intervention tous arrondissements
+    - Techniciens certifiés toutes marques
+    - Stock de pièces important
+    - Service express centre-ville
+  </>
+)}
+
+{props.ville === 'Villeurbanne' && (
+  <>
+    ## Réparation chaudière Villeurbanne
+
+    Notre service local :
+    - Intervention rapide tous quartiers
+    - Spécialistes chauffage
+    - Expertise habitat collectif
+    - Dépannage express
+  </>
+)}
+
+{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
+  <>
+    ## Service chaudière à {props.ville}
+
+    Notre engagement :
+    - Intervention sous {props.response_time}
+    - Techniciens qualifiés
+    - Devis transparent
+    - Suivi personnalisé
+  </>
+)}
+
+## Marques traitées
+
+- Saunier Duval
+- Frisquet
+- Chaffoteaux
+- Viessmann
+- ELM Leblanc
+- De Dietrich
+- Atlantic
+- Vaillant
+
+## Pannes courantes
+
+- Pression insuffisante
+- Absence de chauffage
+- Bruit anormal
+- Code erreur
+- Fuite chaudière
+- Dysfonctionnement thermostat
+- Problème d'allumage
+
+## Nos prestations
+
+- Dépannage d'urgence
+- Réparation
+- Maintenance
+- Remplacement pièces
+- Détartrage
+- Optimisation rendement
+- Mise aux normes
+
+## Pourquoi nous choisir ?
+
+1. **Rapidité** : Intervention sous {props.response_time}
+2. **Expertise** : Techniciens agréés toutes marques
+3. **Disponibilité** : Service d'urgence 7j/7
+4. **Qualité** : Pièces d'origine garanties
+5. **Transparence** : Devis détaillé gratuit

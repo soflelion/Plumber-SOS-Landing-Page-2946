@@ -1,0 +1,92 @@
+export const props = ['ville', 'response_time', 'service'];
+
+# {props.service} à {props.ville}
+
+Problème de radiateur ou de robinetterie à {props.ville} ? Nos plombiers chauffagistes interviennent sous {props.response_time} pour un dépannage efficace.
+
+## Nos services de dépannage
+
+- Diagnostic précis et rapide
+- Réparation immédiate
+- Remplacement si nécessaire
+- Installation aux normes
+
+{props.ville === 'Lyon' && (
+  <>
+    ## Dépannage radiateur et robinetterie Lyon
+
+    Notre expertise lyonnaise :
+    - Intervention tous arrondissements
+    - Stock pièces important
+    - Spécialistes chauffage central
+    - Solutions habitat ancien
+  </>
+)}
+
+{props.ville === 'Villeurbanne' && (
+  <>
+    ## Service plomberie Villeurbanne
+
+    Notre service local :
+    - Intervention rapide tous quartiers
+    - Expertise copropriétés
+    - Techniciens qualifiés
+    - Pièces disponibles
+  </>
+)}
+
+{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
+  <>
+    ## Dépannage plomberie à {props.ville}
+
+    Notre engagement :
+    - Intervention sous {props.response_time}
+    - Équipe locale qualifiée
+    - Stock permanent
+    - Garantie intervention
+  </>
+)}
+
+## Interventions radiateurs
+
+- Purge professionnelle
+- Remplacement robinet
+- Réparation fuite
+- Changement joint
+- Remplacement radiateur
+- Équilibrage installation
+- Désembouage
+
+## Services robinetterie
+
+- Réparation mitigeur
+- Changement cartouche
+- Remplacement joint
+- Installation robinet
+- Réparation fuite
+- Détartrage
+- Maintenance préventive
+
+## Types d'équipements
+
+### Radiateurs
+- Radiateur fonte
+- Radiateur acier
+- Radiateur aluminium
+- Sèche-serviette
+- Plancher chauffant
+
+### Robinetterie
+- Mitigeur cuisine
+- Robinet salle de bain
+- Mitigeur thermostatique
+- Robinet extérieur
+- Robinet d'arrêt
+
+## Pourquoi nous choisir ?
+
+1. **Rapidité** : Intervention sous {props.response_time}
+2. **Stock** : Pièces disponibles
+3. **Expertise** : Techniciens qualifiés
+4. **Garantie** : Travaux garantis
+5. **Transparence** : Devis détaillé gratuit

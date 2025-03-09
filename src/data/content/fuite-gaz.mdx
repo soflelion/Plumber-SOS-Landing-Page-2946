@@ -1,0 +1,82 @@
+export const props = ['ville', 'response_time', 'service'];
+
+# {props.service} à {props.ville}
+
+⚠️ Une fuite de gaz à {props.ville} ? C'est une urgence ! Nos techniciens certifiés interviennent en priorité sous {props.response_time} pour votre sécurité.
+
+## Intervention d'urgence gaz
+
+- Mise en sécurité immédiate
+- Détection professionnelle des fuites
+- Réparation conforme aux normes
+- Certification de conformité
+
+{props.ville === 'Lyon' && (
+  <>
+    ## Service fuite de gaz Lyon
+
+    Notre expertise sur Lyon :
+    - Intervention prioritaire tous arrondissements
+    - Équipe certifiée gaz
+    - Partenaire des principaux fournisseurs
+    - Connaissance du réseau lyonnais
+  </>
+)}
+
+{props.ville === 'Villeurbanne' && (
+  <>
+    ## Urgence gaz Villeurbanne
+
+    Notre service local :
+    - Intervention express tous quartiers
+    - Techniciens habilités gaz
+    - Expertise installations collectives
+    - Disponibilité 24h/24
+  </>
+)}
+
+{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
+  <>
+    ## Service fuite gaz à {props.ville}
+
+    Notre engagement :
+    - Intervention sous {props.response_time}
+    - Équipe certifiée locale
+    - Matériel de détection professionnel
+    - Disponibilité permanente
+  </>
+)}
+
+## Mesures de sécurité immédiates
+
+1. Ouvrez les fenêtres
+2. Ne touchez à aucun interrupteur
+3. Fermez le robinet de gaz
+4. Évacuez les lieux
+5. Appelez-nous immédiatement
+
+## Nos prestations gaz
+
+- Détection de fuite
+- Réparation d'urgence
+- Mise en conformité
+- Remplacement de flexible
+- Vérification installation
+- Test d'étanchéité
+- Certification installation
+
+## Pourquoi nous choisir ?
+
+1. **Urgence** : Intervention prioritaire sous {props.response_time}
+2. **Certification** : Techniciens agréés gaz
+3. **Sécurité** : Protocoles stricts
+4. **Expertise** : Équipement professionnel
+5. **Conformité** : Respect des normes en vigueur
+
+## Prévention des fuites de gaz
+
+- Vérification régulière des installations
+- Contrôle des raccordements
+- Maintenance préventive
+- Détection précoce
+- Conseils de sécurité

@@ -1,0 +1,84 @@
+export const props = ['ville', 'response_time', 'service'];
+
+# {props.service} à {props.ville}
+
+Dégât des eaux à {props.ville} ? Notre équipe intervient en urgence sous {props.response_time} pour limiter les dommages et résoudre rapidement votre problème.
+
+## Notre service dégât des eaux
+
+- Intervention d'urgence immédiate
+- Détection de l'origine de la fuite
+- Solutions rapides et efficaces
+- Assistance administrative
+
+{props.ville === 'Lyon' && (
+  <>
+    ## Intervention dégât des eaux Lyon
+
+    Notre expertise lyonnaise :
+    - Couverture tous arrondissements
+    - Équipe mobilisable 24h/24
+    - Partenariat assurances
+    - Spécialistes bâtiments anciens
+  </>
+)}
+
+{props.ville === 'Villeurbanne' && (
+  <>
+    ## Service dégât des eaux Villeurbanne
+
+    Notre service local :
+    - Intervention express tous secteurs
+    - Expertise immeubles collectifs
+    - Équipement dernière génération
+    - Solutions durables garanties
+  </>
+)}
+
+{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
+  <>
+    ## Intervention dégât des eaux à {props.ville}
+
+    Notre engagement :
+    - Intervention sous {props.response_time}
+    - Équipe qualifiée locale
+    - Matériel professionnel
+    - Suivi complet du dossier
+  </>
+)}
+
+## Nos prestations d'urgence
+
+- Détection de fuite
+- Pompage d'eau
+- Assèchement des lieux
+- Réparation de la cause
+- Protection des biens
+- Prévention moisissures
+- Remise en état
+
+## Types de dégâts traités
+
+- Fuite de canalisation
+- Infiltration toiture
+- Débordement baignoire/lavabo
+- Fuite machine à laver
+- Remontées capillaires
+- Infiltration façade
+- Fuite chauffe-eau
+
+## Pourquoi nous choisir ?
+
+1. **Urgence** : Intervention sous {props.response_time}
+2. **Expertise** : Techniciens qualifiés
+3. **Équipement** : Matériel professionnel
+4. **Assurance** : Aide aux démarches
+5. **Suivi** : Accompagnement complet
+
+## Assistance administrative
+
+- Constat dégât des eaux
+- Photos et rapport détaillé
+- Contact avec l'assurance
+- Devis de réparation
+- Suivi du dossier

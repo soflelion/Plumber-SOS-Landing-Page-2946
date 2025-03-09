@@ -1,0 +1,73 @@
+export const props = ['ville', 'response_time', 'service'];
+
+# {props.service} à {props.ville}
+
+Un WC bouché à {props.ville} ? Notre équipe de plombiers intervient en urgence sous {props.response_time} pour résoudre votre problème rapidement et efficacement.
+
+## Notre service de débouchage WC
+
+- Intervention d'urgence 24h/24
+- Débouchage professionnel et hygiénique
+- Solutions durables garanties
+- Équipement spécialisé
+
+{props.ville === 'Lyon' && (
+  <>
+    ## Débouchage WC Lyon
+
+    Notre service sur Lyon :
+    - Couverture complète du 1er au 9e arrondissement
+    - Intervention rapide centre-ville et périphérie
+    - Équipe disponible jour et nuit
+    - Solutions adaptées aux immeubles anciens
+  </>
+)}
+
+{props.ville === 'Villeurbanne' && (
+  <>
+    ## Débouchage WC Villeurbanne
+
+    Notre expertise locale :
+    - Service express Gratte-Ciel et Charpennes
+    - Intervention rapide quartiers résidentiels
+    - Équipe dédiée Villeurbanne
+    - Solutions pour tous types d'installations
+  </>
+)}
+
+{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
+  <>
+    ## Service débouchage WC à {props.ville}
+
+    Nos engagements :
+    - Intervention sous {props.response_time}
+    - Équipe locale qualifiée
+    - Matériel professionnel adapté
+    - Service d'urgence disponible
+  </>
+)}
+
+## Nos techniques de débouchage
+
+- Ventouse professionnelle haute pression
+- Furet électrique spécial WC
+- Pompe de débouchage puissante
+- Hydrocurage
+- Caméra d'inspection
+
+## Causes fréquentes de WC bouché
+
+- Accumulation de papier toilette
+- Corps étrangers
+- Calcaire et tartre
+- Problèmes de canalisation
+- Racines dans les conduites
+- Dysfonctionnement du siphon
+
+## Pourquoi nous choisir ?
+
+1. **Rapidité** : Intervention en moins de {props.response_time}
+2. **Hygiène** : Protocole strict et désinfection
+3. **Expertise** : Plombiers qualifiés et expérimentés
+4. **Équipement** : Matériel professionnel adapté
+5. **Prix** : Tarification claire et sans surprise

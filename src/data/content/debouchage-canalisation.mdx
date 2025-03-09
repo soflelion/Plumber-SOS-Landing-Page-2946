@@ -1,0 +1,76 @@
+export const props = ['ville', 'response_time', 'service'];
+
+# {props.service} à {props.ville}
+
+Besoin d'un débouchage de canalisation à {props.ville} ? Notre équipe intervient en moins de {props.response_time} pour résoudre efficacement vos problèmes d'évacuation.
+
+## Notre service de débouchage
+
+- Débouchage haute pression professionnel
+- Inspection vidéo des canalisations
+- Détection des causes du bouchage
+- Solutions durables garanties
+
+{props.ville === 'Lyon' && (
+  <>
+    ## Service débouchage à Lyon
+
+    Notre expertise sur Lyon :
+    - Intervention dans tous les arrondissements
+    - Équipement professionnel de pointe
+    - Service disponible 24h/24
+    - Expertise particulière centre historique
+  </>
+)}
+
+{props.ville === 'Villeurbanne' && (
+  <>
+    ## Débouchage canalisations Villeurbanne
+
+    Notre service à Villeurbanne :
+    - Intervention rapide quartiers Gratte-Ciel/Charpennes
+    - Équipe locale disponible
+    - Solutions adaptées aux immeubles anciens
+    - Expertise reconnue sur Villeurbanne
+  </>
+)}
+
+{props.ville !== 'Lyon' && props.ville !== 'Villeurbanne' && (
+  <>
+    ## Service débouchage à {props.ville}
+
+    Notre engagement local :
+    - Intervention sous {props.response_time}
+    - Équipement dernière génération
+    - Diagnostic précis par caméra
+    - Solutions adaptées à votre situation
+  </>
+)}
+
+## Nos techniques de débouchage
+
+- Hydrocurage haute pression
+- Furet électrique professionnel
+- Pompe de débouchage
+- Inspection par caméra
+- Nettoyage haute pression
+- Débouchage mécanique
+- Solutions chimiques écologiques
+
+## Types d'interventions
+
+- Débouchage WC
+- Débouchage évier
+- Débouchage baignoire
+- Débouchage douche
+- Débouchage lavabo
+- Débouchage colonne
+- Curage canalisation
+
+## Pourquoi faire appel à nos services ?
+
+1. **Rapidité** : Intervention en moins de {props.response_time}
+2. **Professionnalisme** : Équipe qualifiée et expérimentée
+3. **Équipement** : Matériel professionnel de dernière génération
+4. **Garantie** : Satisfaction garantie sur nos interventions
+5. **Tarifs** : Prix transparents et devis gratuit
